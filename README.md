@@ -1,0 +1,2 @@
+# Fungi Radio
+Fungi Radio is a radio created using YouTube's iframe API. It can switch between different "stations," it can mute, pause, and skip, and the stations have unique backgrounds and "album" arts.
