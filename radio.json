@@ -1,0 +1,123 @@
+{
+	"radiolist": [
+		[
+			{
+				"id": "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
+				"name": "Fungi Radio",
+				"album": "https://media.discordapp.net/attachments/392834398153867267/1044143943979384893/FungiRadio.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQoMGfGwD2QGLbLAP-PhyR8",
+				"name": "Fungames Radio",
+				"album": "https://i.imgur.com/QmRFxWl.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058205319634898985/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQogKZWlT4LbNO6WJg_3zkP",
+				"name": "Bungus Radio",
+				"album": "https://media.discordapp.net/attachments/392834398153867267/1044145273854763058/image.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058206431972687872/image.png"
+			}
+		],
+		[
+			{
+				"id": "PLGgeOJev8QMS2yQeRfRoi6kTbwQ0jbzm-",
+				"name": "CD8 Radio",
+				"album": "https://media.discordapp.net/attachments/392834398153867267/1052723208714985482/Profile.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058213534347055164/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQ0vhvR6tPmM70yrkTVal1u",
+				"name": "kiwi Radio",
+				"album": "https://cdn.discordapp.com/avatars/262667964015181825/d5a6f1ca852dea49b02853bb8fa21432.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1058210047651496006/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQtUmrKwVybbld_kDjnVJak",
+				"name": "Venom Radio",
+				"album": "https://cdn.discordapp.com/avatars/724394917970837586/c71bc11d880aa2b21d32700d73431a5e.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRrt-SjS4xpjFL6WRAirdPL",
+				"name": "Gary Radio",
+				"album": "https://cdn.discordapp.com/guilds/220729787528904705/users/411742558998233089/avatars/3ffca8fc72dd3ae00984a71048943658.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058213795018842172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMS0vG1qHDRPR9CkHXjRKTAp",
+				"name": "Skeltals Radio",
+				"album": "https://cdn.discordapp.com/avatars/397274134532456455/d9278e0ee6b55ad5e1ff6eeb1b17887e.png",
+				"bg": "https://cdn.discordapp.com/attachments/617979457373863937/1058252056772739173/a03f044c-60b9-478e-98c2-da9fe28fa73c.jpg"
+			},
+			{
+				"id": "PLGgeOJev8QMS2VShq48QvatsyLzWU3gbX",
+				"name": "Bada Radio",
+				"album": "https://cdn.discordapp.com/avatars/199936278643343360/13e32058b354017f7b2879add22c4562.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058216148925165578/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQHxTRLSli2Eyfx6NK68uUy",
+				"name": "Weird Radio",
+				"album": "https://cdn.discordapp.com/avatars/609213609976922116/ab199425fde243ada052b022fcccc2af.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058217235388317817/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQk72VfehTA8P_vsY12L3t9",
+				"name": "Ratt Radio",
+				"album": "https://cdn.discordapp.com/guilds/220729787528904705/users/393551767863820298/avatars/56f7e9bd81f2bab90ca0dda0cd8658e5.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058219113027219456/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQZ9HVrOjqN0to_w5h9LwTZ",
+				"name": "Dee Radio",
+				"album": "https://cdn.discordapp.com/avatars/139898440736833537/d201e0681d3d2280446d4f615f4711ab.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058221124451848253/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQJfgkx2w4CezUCxQHFVa9i",
+				"name": "Alpha Radio",
+				"album": "https://cdn.discordapp.com/avatars/381943380973846542/65584f8485bb637a49f44eb55be11568.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058222555149901915/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSczyw_2cIsQuBh0mrb1LQg",
+				"name": "Rob Radio",
+				"album": "https://cdn.discordapp.com/avatars/207677172582842368/fdcfdb0983e29c3cc8b5cca90b873e0c.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058223964624793610/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRRNJYQTlnwuUcmUdg9hX2o",
+				"name": "Dapper Radio",
+				"album": "https://cdn.discordapp.com/avatars/361334251897225217/280149a50488e42dfc3f0e84a897a0c2.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTxB-ujItwN0k4QYn6FDWAN",
+				"name": "Caves Radio",
+				"album": "https://cdn.discordapp.com/avatars/371422243496001557/668f35bee34834251c6250cc2abd61c0.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058240100678500513/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSxeG0b8ac5lyLBAreJyLa4",
+				"name": "Jon Radio",
+				"album": "https://cdn.discordapp.com/avatars/373856865399865345/46cc2f3b58b6782d64ca4960ac583359.png",
+				"bg": "https://cdn.discordapp.com/attachments/617979457373863937/1058215005276885122/426115-popular-wallpaper-initial-d-1920x1080-1376657150.jpg"
+			},
+			{
+				"id": "PLGgeOJev8QMTSFT__FjyXAoynrB_U_SOR",
+				"name": "Ewick Radio",
+				"album": "https://cdn.discordapp.com/avatars/496350389629878272/b413d815d64b0078444a3a8a8daeaa86.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058240971575406622/neco.gif"
+			},
+			{
+				"id": "PLGgeOJev8QMS-4Q_dldSKVahepC1v7hgQ",
+				"name": "Wosk Radio",
+				"album": "https://cdn.discordapp.com/avatars/236233842711724032/de2b71c8605a5c6d10503f32a2a5bfa4.png",
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058242728535801856/image.png"
+			}
+		]
+		
+	]
+}

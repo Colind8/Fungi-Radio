@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>Fungi Radio</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onkeydown="keycontrols(event)" id="body">
+	<div id="player"></div>
+	<div id="thecontainer">
+		<div id="album" onclick="radiolist_openup()">
+			<img draggable="false" id="album_art" src="">
+		</div>
+		<div id="radiolist">
+		</div>
+		<div id="controls">
+			<span class="control_button" id="control_mute" onclick="mute()">🔊</span>
+			<span class="control_button" id="control_pause" onclick="pause()">⏸</span>
+			<span class="control_button" id="control_skip" onclick="skip()">⏭</span>
+			<span id="status">Loading...</span>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+	<script src="script.js"></script>
+</body>
+
+</html>
