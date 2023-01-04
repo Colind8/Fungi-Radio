@@ -94,6 +94,7 @@ function switch_radio(qw, qwer) {
 	radio_name = radio_data.radiolist[qw][qwer].name;
 
 	radio_shuffle = false;
+	//player.setShuffle(true);
 	player.loadPlaylist({
 		list: radio_id,
 		listType: "playlist",
@@ -139,6 +140,7 @@ function onPlayerStateChange(event) {
 			if (!radio_shuffle) {
 				player.setShuffle(true);
 				radio_shuffle = true;
+				player.playVideoAt(0);
 			}
 			break;
 		case 2:
