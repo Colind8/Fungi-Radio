@@ -136,7 +136,8 @@ function onPlayerStateChange(event) {
 			document.getElementById('status').innerHTML = "Switching Song...";
 			break;
 		case 1:
-			document.getElementById('status').innerHTML = "Now playing... " + radio_name;
+			;
+			document.getElementById('status').innerHTML = "Now playing... " + document.getElementById('player').title + " - " + radio_name;
 			if (!radio_shuffle) {
 				player.setShuffle(true);
 				radio_shuffle = true;
@@ -172,7 +173,7 @@ function radiolist_select(section, id) {
 	for (i = 0; i < radiolist_albums.length; i++) {
 		radiolist_albums[i].style.animation = "album_fadeout 0.2s ease-in forwards";
 	}
-	
+
 	if (!((radio_current[0] == section) && (radio_current[1] == id))) {
 		document.getElementById("body").style.backgroundImage = `url('${radio_data.radiolist[section][id].bg}')`;
 		radio_current = [section, id];
