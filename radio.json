@@ -37,12 +37,12 @@
 				"id": "PLGgeOJev8QMQtUmrKwVybbld_kDjnVJak",
 				"name": "Venom Radio",
 				"album": "https://cdn.discordapp.com/avatars/724394917970837586/670e0e5d6fae4966312fb42f687ffad3.png",
-				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1066444615978332162/image.png"
 			},
 			{
 				"id": "PLGgeOJev8QMRrt-SjS4xpjFL6WRAirdPL",
 				"name": "Gary Radio",
-				"album": "https://cdn.discordapp.com/guilds/220729787528904705/users/411742558998233089/avatars/3ffca8fc72dd3ae00984a71048943658.png",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066445547835244624/56b67dc6a46a0b84175efddce8d2cb18.png",
 				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058213795018842172/image.png"
 			},
 			{
@@ -97,7 +97,7 @@
 				"id": "PLGgeOJev8QMTxB-ujItwN0k4QYn6FDWAN",
 				"name": "Caves Radio",
 				"album": "https://cdn.discordapp.com/avatars/371422243496001557/668f35bee34834251c6250cc2abd61c0.png",
-				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058240100678500513/image.png"
+				"bg": "https://media.discordapp.net/attachments/617979457373863937/1066237174795751484/Untitled.png"
 			},
 			{
 				"id": "PLGgeOJev8QMSxeG0b8ac5lyLBAreJyLa4",
@@ -116,6 +116,32 @@
 				"name": "Wosk Radio",
 				"album": "https://cdn.discordapp.com/avatars/236233842711724032/de2b71c8605a5c6d10503f32a2a5bfa4.png",
 				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058242728535801856/image.png"
+			}
+		],
+		[
+			{
+				"id": "PLGgeOJev8QMTxp1FhPLLIGhA8BqK_tdh1",
+				"name": "HIPHOP Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066466571272335400/hiphop2.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRo5UukZ5xPWzWS3nEFX4sy",
+				"name": "J/K POP Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066473304749244468/jkpop.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSpXjcqVFvu7uHELJdOZKS8",
+				"name": "TV/MOVIE Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066474252800376913/tvmovies.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSjewFGNCZZD250T9A73WhC",
+				"name": "NOVELTY Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066473304166256640/novelty.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
 			}
 		]
 		

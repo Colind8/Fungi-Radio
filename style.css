@@ -98,8 +98,12 @@ html {
 	padding-bottom: 4px;
 	padding-left: 2px;
 	padding-right: 2px;
-	flex: 0 1 auto;
+	/*flex: 0 1 auto;*/
+	display: flex;
+	align-items: center;
 	font-size: 1.25em;
+	justify-content: center;
+  	/*align-items: center;*/
 	/*position:fixed;
 	bottom:0;*/
 }
@@ -115,6 +119,24 @@ html {
 	font-size: 1.2em;
 	background-color: rgba(100,100,100,0.5);
 	color: #bbbbbb;
+}
+#status, .control_button {
+	flex-grow: 0;
+	white-space: nowrap;
+}
+
+#ticker {
+	width: 100%;
+	flex-grow: 1;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
+#ticker::-webkit-scrollbar {
+	display: none;
+}
+#status::-webkit-scrollbar {
+	display: none;
 }
 
 #radiolist {
@@ -153,3 +175,4 @@ hr {
 	margin-left: 110px;
 	margin-right: 100px;
 }
+

@@ -131,23 +131,31 @@ function onPlayerStateChange(event) {
 	switch (event.data) {
 		case -1:
 			document.getElementById('status').innerHTML = "Switching Song...";
+			document.getElementById('ticker').innerHTML = "";
 			break;
 		case 3:
 			document.getElementById('status').innerHTML = "Switching Song...";
+			document.getElementById('ticker').innerHTML = "";
 			break;
 		case 1:
 			;
-			document.getElementById('status').innerHTML = "Now playing... " + document.getElementById('player').title + " - " + radio_name;
+			document.getElementById('status').innerHTML = "Now playing... ";
 			if (!radio_shuffle) {
 				player.setShuffle(true);
 				radio_shuffle = true;
 				player.playVideoAt(0);
 			}
+			document.getElementById('ticker').innerHTML = document.getElementById('player').title + " - " + radio_name;
+			ticker_scroll();
 			break;
 		case 2:
-			document.getElementById('status').innerHTML = "Paused... " + radio_name;
+			document.getElementById('status').innerHTML = "Paused... ";
 			break;
 	}
+}
+
+function ticker_scroll() {
+	scroll_width = document.getElementById('ticker').scrollWidth;
 }
 
 function radiolist_openup() {
