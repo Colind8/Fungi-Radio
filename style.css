@@ -1,3 +1,5 @@
+
+
 body {
 	background-color: black;
 	background-image: url("https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png");
@@ -65,7 +67,7 @@ html {
 #thecontainer {
 	display: flex;
 	flex-direction: column;
-	height: 100%
+	height: 100%;
 }
 
 #header {

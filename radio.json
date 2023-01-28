@@ -60,7 +60,7 @@
 			{
 				"id": "PLGgeOJev8QMQHxTRLSli2Eyfx6NK68uUy",
 				"name": "Weird Radio",
-				"album": "https://cdn.discordapp.com/avatars/609213609976922116/ab199425fde243ada052b022fcccc2af.png",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068665526856982528/6bb0646e48a8d2df91b212a17225e201.png",
 				"bg": "https://cdn.discordapp.com/attachments/392834398153867267/1058217235388317817/image.png"
 			},
 			{
@@ -120,9 +120,45 @@
 		],
 		[
 			{
+				"id": "PLGgeOJev8QMQTDZSpnndKK3K4hNfXyS2N",
+				"name": "Classical Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663666968363018/classical.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMThh-Fo_q9rmlX40fJP4K_s",
+				"name": "Disco Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663667203264602/disco.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSqsitQnd9MACPpKBVYIePt",
+				"name": "EDM Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663667673022525/edm.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTrZUXLTJW5pHo1U9eBESUi",
+				"name": "Electrofunk Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663667853361152/electrofunk.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRWaYbVnJocIXm_WNfQIYM6",
+				"name": "ERM Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663668146982993/erm.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
 				"id": "PLGgeOJev8QMTxp1FhPLLIGhA8BqK_tdh1",
 				"name": "HIPHOP Radio",
 				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066466571272335400/hiphop2.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMS_CM2nl6kAB9RoimAAwMeF",
+				"name": "Jazz&Blues Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663668629307422/jazz.png",
 				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
 			},
 			{
@@ -132,15 +168,39 @@
 				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
 			},
 			{
-				"id": "PLGgeOJev8QMSpXjcqVFvu7uHELJdOZKS8",
-				"name": "TV/MOVIE Radio",
-				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066474252800376913/tvmovies.png",
+				"id": "PLGgeOJev8QMQa-vksc-2dMlTAJ-1DZjjb",
+				"name": "Metal Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068664829109354586/metal.png",
 				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
 			},
 			{
 				"id": "PLGgeOJev8QMSjewFGNCZZD250T9A73WhC",
 				"name": "NOVELTY Radio",
 				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066473304166256640/novelty.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRqT0ZQV7Ub49J5Pd9WD4z2",
+				"name": "Pop Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663668855820308/pop.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQqvFiu2UzO0uwTv0YffAu3",
+				"name": "Rock Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663669094891571/rock.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSpXjcqVFvu7uHELJdOZKS8",
+				"name": "TV/MOVIE Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1066474252800376913/tvmovies.png",
+				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
+			},
+			{
+				"id": "PLGgeOJev8QMT-i5ncIV-6W9O_In-MFEKM",
+				"name": "War-Religion-Folk Radio",
+				"album": "https://cdn.discordapp.com/attachments/392834398153867267/1068663666586697868/war.png",
 				"bg": "https://media.discordapp.net/attachments/392834398153867267/1053426940125655172/image.png"
 			}
 		]
