@@ -1,0 +1,196 @@
+body {
+	background-color: black;
+	background-image: url("https://i.imgur.com/ksRPfI7.png");
+	backdrop-filter: brightness(100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: sans-serif;
+	color: white;
+	margin: 0px 0px 0px 0px;
+	height: 100%;
+	-webkit-user-select: none; /* Safari */
+  	-ms-user-select: none; /* IE 10 and IE 11 */
+  	user-select: none; /* Standard syntax */
+}
+
+html {
+	height: 100%;
+}
+
+@keyframes albumanimation {
+	from {transform: scaleX(1);}
+	to {transform: scaleX(-1);}
+}
+
+@keyframes album_fadeout {
+	from {
+		transform: scaleY(1);
+	}
+	to {
+		transform: scaleY(0);
+	}
+}
+
+@keyframes album_fadein {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(1);
+	}
+}
+
+@keyframes bg_fadeout {
+	from {
+		backdrop-filter: brightness(100%);
+	}
+	to {
+		backdrop-filter: brightness(0%);
+	}
+}
+
+@keyframes bg_fadein {
+	from {
+		backdrop-filter: brightness(0%);
+	}
+	to {
+		backdrop-filter: brightness(100%);
+	}
+}
+
+#player {
+	display: none;
+}
+
+#thecontainer {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#header {
+	flex: 0 1 auto;
+}
+
+#album {
+	display: flex;
+	flex: 1 1 auto;
+	justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#album_art {
+	animation: albumanimation 4s alternate infinite ease-in-out;
+	width: 50vmin;
+  	/*animation-duration: 4s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;*/
+}
+
+#controls {
+	background-color: rgba(0,0,0,0.5);
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 2px;
+	padding-right: 2px;
+	/*flex: 0 1 auto;*/
+	display: flex;
+	align-items: center;
+	font-size: 1.25em;
+	justify-content: center;
+  	/*align-items: center;*/
+	/*position:fixed;
+	bottom:0;*/
+}
+
+.control_button {
+	font-size: 1.2em;
+	padding: 2px 2px 2px 2px;
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+	color: #555555;
+}
+.control_button:hover {
+	font-size: 1.2em;
+	background-color: rgba(100,100,100,0.5);
+	color: #bbbbbb;
+}
+#status, .control_button {
+	flex-grow: 0;
+	white-space: nowrap;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+#status {
+	margin-right: .5em;
+}
+
+#ticker {
+	width: 100%;
+	flex-grow: 1;
+	overflow-x: scroll;
+	white-space: nowrap;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+#ticker::-webkit-scrollbar {
+	display: none; /* Chrome and Safari */
+	
+}
+#status::-webkit-scrollbar {
+	display: none; /* Chrome and Safari */
+}
+
+#radiolist {
+	text-align: center;
+	display: flex;
+	overflow-y: scroll;
+	flex: 1 1 auto;
+	justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.radiolist_albums {
+	width: 8em;
+	margin: 0.1em;
+	transform: scaleY(0);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.05); 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25); 
+}
+
+hr {
+	border-color: rgba(255,255,255,0.1);
+	margin-left: 110px;
+	margin-right: 100px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+	text-decoration: underline;
+}

@@ -1,0 +1,19 @@
+{
+	"radiolist": [
+		[
+			{
+				"file": "fungiradio",
+				"name": "Fungi Radio",
+				"album": "https://i.imgur.com/flXLkQI.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"file": "vg",
+				"name": "Fungames Radio",
+				"album": "https://i.imgur.com/QmRFxWl.png",
+				"bg": "https://i.imgur.com/CkY7Se2.png"
+			}
+			
+		]
+	]
+}

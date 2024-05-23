@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<title>Fungi Radio 2000!</title>
+	<link href="./radio/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onkeydown="keycontrols(event)" id="body">
+	<div id="player"></div>
+	<div id="thecontainer">
+		<div id="album" onclick="radiolist_openup()">
+			<img draggable="false" id="album_art" src="">
+		</div>
+		<div id="radiolist">
+		</div>
+		<div id="controls">
+			<div class="control_button" id="control_mute" onclick="mute()"><img draggable="false" width="16px" src="./radio/svg/volume_hi.svg"></div>
+			<div class="control_button" id="control_mute" onclick="volume_change(-5)"><img draggable="false" width="16px" src="./radio/svg/minus.svg"></div>
+			<div class="control_button" id="control_mute" onclick="volume_change(5)"><img draggable="false" width="16px" src="./radio/svg/plus.svg"></div>
+			<div id="volume_status">100%</div>
+			<div class="control_button" id="control_pause" onclick="pause()"><img draggable="false" width="16px" src="./radio/svg/pause.svg"></div>
+			<div class="control_button" id="control_skip" onclick="skip()"><img draggable="false" width="16px" src="./radio/svg/skip.svg"></div>
+			<div id="status">Loading... </div>
+			<div id="ticker"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+	<script src="./radio/2k/script.js"></script>
+</body>
+
+</html>

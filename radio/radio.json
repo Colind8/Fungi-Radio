@@ -1,0 +1,203 @@
+{
+	"radiolist": [
+		[
+			{
+				"id": "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
+				"name": "Fungi Radio",
+				"album": "https://i.imgur.com/flXLkQI.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQoMGfGwD2QGLbLAP-PhyR8",
+				"name": "Fungames Radio",
+				"album": "https://i.imgur.com/QmRFxWl.png",
+				"bg": "https://i.imgur.com/CkY7Se2.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQogKZWlT4LbNO6WJg_3zkP",
+				"name": "Bungus Radio",
+				"album": "https://i.imgur.com/bJ3m29W.png",
+				"bg": "https://i.imgur.com/NxVSu9l.png"
+			}
+		],
+		[
+			{
+				"id": "PLGgeOJev8QMS2yQeRfRoi6kTbwQ0jbzm-",
+				"name": "CD8 Radio",
+				"album": "https://i.imgur.com/nuSNttV.png",
+				"bg": "https://i.imgur.com/94LXxTO.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQ0vhvR6tPmM70yrkTVal1u",
+				"name": "kiwi Radio",
+				"album": "https://i.imgur.com/u34fUwX.png",
+				"bg": "https://i.imgur.com/LSnL2pe.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQtUmrKwVybbld_kDjnVJak",
+				"name": "Venom Radio",
+				"album": "https://i.imgur.com/tm2CZcO.png",
+				"bg": "https://i.imgur.com/zD2Efpf.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRrt-SjS4xpjFL6WRAirdPL",
+				"name": "Gary Radio",
+				"album": "https://i.imgur.com/2JLw8Yt.png",
+				"bg": "https://i.imgur.com/797FxyW.png"
+			},
+			{
+				"id": "PLGgeOJev8QMS0vG1qHDRPR9CkHXjRKTAp",
+				"name": "Skeltals Radio",
+				"album": "https://i.imgur.com/UQXlHoC.png",
+				"bg": "https://i.imgur.com/QAtvasr.jpeg"
+			},
+			{
+				"id": "PLGgeOJev8QMS2VShq48QvatsyLzWU3gbX",
+				"name": "Bada Radio",
+				"album": "https://i.imgur.com/GpXaRzJ.png",
+				"bg": "https://i.imgur.com/fia1QHB.jpeg"
+			},
+			{
+				"id": "PLGgeOJev8QMQHxTRLSli2Eyfx6NK68uUy",
+				"name": "Weird Radio",
+				"album": "https://i.imgur.com/GYNyBov.png",
+				"bg": "https://i.imgur.com/L0sfRh7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQk72VfehTA8P_vsY12L3t9",
+				"name": "Ratt Radio",
+				"album": "https://i.imgur.com/69iOel7.png",
+				"bg": "https://i.imgur.com/fwsdaAD.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQZ9HVrOjqN0to_w5h9LwTZ",
+				"name": "Dee Radio",
+				"album": "https://i.imgur.com/9Hasmqa.png",
+				"bg": "https://i.imgur.com/X4NwivY.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSczyw_2cIsQuBh0mrb1LQg",
+				"name": "Rob Radio",
+				"album": "https://i.imgur.com/K2O9zND.png",
+				"bg": "https://i.imgur.com/IHd30RH.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRRNJYQTlnwuUcmUdg9hX2o",
+				"name": "Dapper Radio",
+				"album": "https://i.imgur.com/6D3T8R9.png",
+				"bg": "https://i.imgur.com/zwHCvJP.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTxB-ujItwN0k4QYn6FDWAN",
+				"name": "Caves Radio",
+				"album": "https://i.imgur.com/TFkMwzn.png",
+				"bg": "https://i.imgur.com/E6Ev8dS.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSxeG0b8ac5lyLBAreJyLa4",
+				"name": "Jon Radio",
+				"album": "https://i.imgur.com/BGEn83g.png",
+				"bg": "https://i.imgur.com/m7oNhht.jpeg"
+			},
+			{
+				"id": "PLGgeOJev8QMTSFT__FjyXAoynrB_U_SOR",
+				"name": "Ewick Radio",
+				"album": "https://i.imgur.com/3uzlD25.png",
+				"bg": "https://i.imgur.com/tt2R2yb.gif"
+			},
+			{
+				"id": "PLGgeOJev8QMS-4Q_dldSKVahepC1v7hgQ",
+				"name": "Wosk Radio",
+				"album": "https://i.imgur.com/812Vmpv.png",
+				"bg": "https://i.imgur.com/nlJBOJw.png"
+			}
+		],
+		[
+			{
+				"id": "PLGgeOJev8QMQTDZSpnndKK3K4hNfXyS2N",
+				"name": "Classical Radio",
+				"album": "https://i.imgur.com/CygmgKs.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMThh-Fo_q9rmlX40fJP4K_s",
+				"name": "Disco Radio",
+				"album": "https://i.imgur.com/TKmg4nm.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSqsitQnd9MACPpKBVYIePt",
+				"name": "EDM Radio",
+				"album": "https://i.imgur.com/ukA8eML.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTrZUXLTJW5pHo1U9eBESUi",
+				"name": "Electrofunk Radio",
+				"album": "https://i.imgur.com/ZOBkf0X.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRWaYbVnJocIXm_WNfQIYM6",
+				"name": "ERM Radio",
+				"album": "https://i.imgur.com/G6Ar3nj.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTxp1FhPLLIGhA8BqK_tdh1",
+				"name": "HIPHOP Radio",
+				"album": "https://i.imgur.com/mQU9390.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMS_CM2nl6kAB9RoimAAwMeF",
+				"name": "Jazz&Blues Radio",
+				"album": "https://i.imgur.com/ee2dam6.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRo5UukZ5xPWzWS3nEFX4sy",
+				"name": "J/K POP Radio",
+				"album": "https://i.imgur.com/oi3v1fA.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQa-vksc-2dMlTAJ-1DZjjb",
+				"name": "Metal Radio",
+				"album": "https://i.imgur.com/x4zXjja.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSjewFGNCZZD250T9A73WhC",
+				"name": "NOVELTY Radio",
+				"album": "https://i.imgur.com/ZX0bLKQ.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMRqT0ZQV7Ub49J5Pd9WD4z2",
+				"name": "Pop Radio",
+				"album": "https://i.imgur.com/X7bzxYP.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMQqvFiu2UzO0uwTv0YffAu3",
+				"name": "Rock Radio",
+				"album": "https://i.imgur.com/fUNwEYh.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMSpXjcqVFvu7uHELJdOZKS8",
+				"name": "TV/MOVIE Radio",
+				"album": "https://i.imgur.com/JpnZCio.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			},
+			{
+				"id": "PLGgeOJev8QMT-i5ncIV-6W9O_In-MFEKM",
+				"name": "War-Religion-Folk Radio",
+				"album": "https://i.imgur.com/0EAF2ST.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
+			}
+		]
+		
+	]
+}
