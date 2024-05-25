@@ -34,7 +34,7 @@ $.getJSON('/radio/radio.json', function(data) {
 	}
 	radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`
 
-	document.getElementById("radiolist").innerHTML = radiolist_string;
+	document.getElementById("radiolist").innerHTML += radiolist_string;
 });
 
 function onYouTubeIframeAPIReady() {
@@ -121,19 +121,19 @@ function skip() {
 }
 
 function onError(event) {
-	console.log(`Error: ${event.data}`);
+	//console.log(`Error: ${event.data}`);
 	if (player.getPlaylistIndex() < 199) {
-		console.log("ERROR: SKIPPING");
+		//console.log("ERROR: SKIPPING");
 		skip();
 	} else {
-		console.log("ERROR: RESHUFFLING");
+		//console.log("ERROR: RESHUFFLING");
 		reshuffle_index = 0;
 		reshuffle(reshuffle_index);
 	}
 }
 
 function switch_radio(qw, qwer) {
-	console.log(`SWITCH RADIO: ${qw}, ${qwer}`);
+	//console.log(`SWITCH RADIO: ${qw}, ${qwer}`);
 	document.getElementById('status').innerHTML = "Loading...";
 	player.stopVideo();
 	radio_id = radio_data.radiolist[qw][qwer].id;
@@ -141,14 +141,14 @@ function switch_radio(qw, qwer) {
 		.setAttribute("src", radio_data.radiolist[qw][qwer].album);
 	radio_name = radio_data.radiolist[qw][qwer].name;
 
-	console.log(`LOADING RADIO: id ${radio_id}, name ${radio_name}`)
+	//console.log(`LOADING RADIO: id ${radio_id}, name ${radio_name}`)
 	//player.setShuffle(true);
 	reshuffle_index = 0;
 	reshuffle(reshuffle_index);
 }
 
 function reshuffle(ri) {
-	console.log(`reshuffling`);
+	//console.log(`reshuffling`);
 	radio_shuffle = false;
 
 	player.loadPlaylist({
@@ -191,7 +191,7 @@ function keycontrols(event) {
 //////////////////////////////
 */
 function onPlayerStateChange(event) {
-	console.log(event.data);
+	//console.log(event.data);
 	switch (event.data) {
 		case -1: // UNSTARTED
 			document.getElementById('status').innerHTML = "Switching Song...";
@@ -230,7 +230,7 @@ function onPlayerStateChange(event) {
 
 reshuffle_search = async () => {
 	while (player.getPlayerState() == 5) {
-		console.log(`playlist failed to load, raising index to ${reshuffle_index + 1}`)
+		//console.log(`playlist failed to load, raising index to ${reshuffle_index + 1}`)
 		reshuffle_index++;
 		reshuffle(reshuffle_index);
 		await delay(1000);
@@ -287,7 +287,7 @@ function radiolist_select(section, id) {
 	}
 
 	if (!((radio_current[0] == section) && (radio_current[1] == id))) {
-		document.getElementById("body").style.backgroundImage = `url('${radio_data.radiolist[section][id].bg}')`;
+		document.getElementById("containerbg").style.backgroundImage = `url("${radio_data.radiolist[section][id].bg}")`;
 		radio_current = [section, id];
 		switch_radio(section, id);
 	}
@@ -299,10 +299,17 @@ function album_display() {
 	document.getElementById("radiolist").style.display = "none";
 	document.getElementById("album_art").style.animation = "album_fadein 0.1s ease-in forwards";
 	document.getElementById("body").style.animation = "bg_fadein 0.5s ease-in forwards";
+	document.getElementById("containerbg").style.animation = "bg_crossfade 0.5s ease-in forwards"
 	setTimeout(album_animate, 100);
+	setTimeout(reset_background, 500);
 }
 
 function album_animate() {
 	document.getElementById("album_art").style.animation = "albumanimation 4s alternate infinite ease-in-out"
 }
 
+function reset_background() {
+	document.getElementById("containerbg").style.animation = "";
+	document.getElementById("body").style.backgroundImage = document.getElementById("containerbg").style.backgroundImage;
+	document.getElementById("containerbg").style.opacity = 0;
+}

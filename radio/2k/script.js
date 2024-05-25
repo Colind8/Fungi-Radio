@@ -117,7 +117,7 @@ function pause() {
 }
 
 function skip() {
-	console.log(`Skipping`);
+	//console.log(`Skipping`);
 	load_next_song();
 }
 
@@ -148,14 +148,14 @@ function switch_radio(qw, qwer) {
 }
 
 function start_radio() {
-	console.log(`Playing: ${radio_array[radio_array.length - 1]}`)
+	//console.log(`Playing: ${radio_array[radio_array.length - 1]}`)
 	player.loadVideoById(radio_array[radio_array.length - 1]);
 }
 
 function load_next_song() {
 	radio_array.pop();
-	console.log(`Songs left: ${radio_array.length}`);
-	console.log(`Loading: ${radio_array[radio_array.length - 1]}`);
+	//console.log(`Songs left: ${radio_array.length}`);
+	//console.log(`Loading: ${radio_array[radio_array.length - 1]}`);
 	if (radio_array.length > 0) {
 		player.loadVideoById(radio_array[radio_array.length - 1]);
 	} else {
@@ -166,11 +166,11 @@ function load_next_song() {
 function reshuffle() {
 	$.get(`/radio/2k/radios/${radio_id}.txt`, function(data) {
 		document.getElementById('status').innerHTML = "Loading [3/5]...";
-		console.log(data);
+		//console.log(data);
 		radio_array = data.split(`\n`);
 		document.getElementById('status').innerHTML = "Loading [4/5]...";
 		radio_array.sort(function(){return 0.5 - Math.random()});
-		console.log(radio_array);
+		//console.log(radio_array);
 		start_radio();
 	});
 }
@@ -205,7 +205,7 @@ function keycontrols(event) {
 //////////////////////////////
 */
 function onPlayerStateChange(event) {
-	console.log(event.data);
+	//console.log(event.data);
 	switch (event.data) {
 		case -1:
 			document.getElementById('status').innerHTML = "Switching Song...";

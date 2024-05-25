@@ -10,12 +10,14 @@
 </head>
 
 <body onkeydown="keycontrols(event)" id="body">
-	<div id="player"></div>
+	<div id="containerbg">
+	</div>
 	<div id="thecontainer">
 		<div id="album" onclick="radiolist_openup()">
 			<img draggable="false" id="album_art" src="">
 		</div>
 		<div id="radiolist">
+			<div id="player"></div>
 		</div>
 		<div id="controls">
 			<div class="control_button" id="control_mute" onclick="mute()"><img draggable="false" width="16px" src="./radio/svg/volume_hi.svg"></div>
@@ -28,6 +30,7 @@
 			<div id="ticker"></div>
 		</div>
 	</div>
+	
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 	<script src="./radio/script.js"></script>
 </body>
