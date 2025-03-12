@@ -18,8 +18,15 @@ html {
 }
 
 @keyframes albumanimation {
-	from {transform: scaleX(1);}
-	to {transform: scaleX(-1);}
+	0% {
+		transform: perspective(700px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+	}
+	50% {
+		transform: perspective(700px) rotateX(0deg) rotateY(-180deg) rotateZ(0deg);
+	}
+	100% {
+		transform: perspective(700px) rotateX(0deg) rotateY(-360deg) rotateZ(0deg);
+	}
 }
 
 @keyframes album_fadeout {
@@ -67,6 +74,15 @@ html {
 	}
 }
 
+@keyframes start_fade {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
 #player {
 	display: none;
 }
@@ -89,6 +105,24 @@ html {
 	background-size: cover;
 }
 
+#startcontainer {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	background-color: black;
+	z-index: 20;
+	opacity: 1;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#startstatus {
+	text-align: center;
+	flex: auto;
+	align-content: center;
+}
+
 #header {
 	flex: 0 1 auto;
 }
@@ -102,8 +136,8 @@ html {
 }
 
 #album_art {
-	animation: albumanimation 4s alternate infinite ease-in-out;
-	width: 50vmin;
+	transform: scaleY(0);
+	width: 40vmin;
   	/*animation-duration: 4s;
 	animation-direction: alternate;
 	animation-iteration-count: infinite;
@@ -139,8 +173,20 @@ html {
 .control_button:hover {
 	font-size: 1.2em;
 	background-color: rgba(100,100,100,0.5);
-	color: #bbbbbb;
 }
+
+.settings_button {
+	padding: 2px 2px 2px 2px;
+	background-color: rgba(0,0,0,0.5);
+	border: none;
+	color: #555555;
+}
+
+.settings_button:hover {
+	background-color: rgba(100,100,100,0.5);
+	color: #ffffff;
+}
+
 #status, .control_button {
 	flex-grow: 0;
 	white-space: nowrap;
@@ -169,7 +215,7 @@ html {
 	display: none; /* Chrome and Safari */
 }
 
-#radiolist {
+#menu {
 	text-align: center;
 	display: flex;
 	overflow-y: scroll;
@@ -214,4 +260,23 @@ a {
 a:hover {
 	color: red;
 	text-decoration: underline;
+}
+
+#settings_menu {
+	background-color: rgba(0,0,0,0.5);
+	display: none;
+}
+
+#form_code {
+	background-color: #222222;
+	outline: none;
+	border-color: #444444;
+	color: #dddddd;
+}
+#form_code:focus {
+	border-color: #aaaaaa;
+}
+
+.extra_control {
+	display: none;
 }

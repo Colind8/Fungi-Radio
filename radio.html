@@ -10,22 +10,29 @@
 </head>
 
 <body onkeydown="keycontrols(event)" id="body">
+	<div id="startcontainer" onclick="start()">
+		<h1 id="startstatus">Loading...</h1>
+	</div>
 	<div id="containerbg">
 	</div>
 	<div id="thecontainer">
 		<div id="album" onclick="radiolist_openup()">
 			<img draggable="false" id="album_art" src="">
 		</div>
-		<div id="radiolist">
+		<div id="menu">
 			<div id="player"></div>
+			<div id="radiolist"></div>
+			<div id="settings_menu"></div>
 		</div>
 		<div id="controls">
 			<div class="control_button" id="control_mute" onclick="mute()"><img draggable="false" width="16px" src="./radio/svg/volume_hi.svg"></div>
 			<div class="control_button" id="control_mute" onclick="volume_change(-5)"><img draggable="false" width="16px" src="./radio/svg/minus.svg"></div>
 			<div class="control_button" id="control_mute" onclick="volume_change(5)"><img draggable="false" width="16px" src="./radio/svg/plus.svg"></div>
 			<div id="volume_status">100%</div>
+			<div class="control_button extra_control" id="control_rewind" onclick="rewind()"><img draggable="false" width="16px" src="./radio/svg/rewind.svg"></div>
 			<div class="control_button" id="control_pause" onclick="pause()"><img draggable="false" width="16px" src="./radio/svg/pause.svg"></div>
 			<div class="control_button" id="control_skip" onclick="skip()"><img draggable="false" width="16px" src="./radio/svg/skip.svg"></div>
+			<div class="control_button extra_control" id="control_loop" onclick="toggle_loop()"><img draggable="false" width="16px" src="./radio/svg/loop_disabled.svg"></div>
 			<div id="status">Loading... </div>
 			<div id="ticker"></div>
 		</div>

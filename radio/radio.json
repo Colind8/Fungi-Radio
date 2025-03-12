@@ -18,6 +18,12 @@
 				"name": "Bungus Radio",
 				"album": "https://i.imgur.com/bJ3m29W.png",
 				"bg": "https://i.imgur.com/NxVSu9l.png"
+			},
+			{
+				"id": "PLGgeOJev8QMTcONdQSl0F0y3zgu4gi78f",
+				"name": "Shroominati Originals Radio",
+				"album": "https://i.imgur.com/5Ovi3eu.png",
+				"bg": "https://i.imgur.com/ksRPfI7.png"
 			}
 		],
 		[
@@ -66,7 +72,7 @@
 			{
 				"id": "PLGgeOJev8QMQk72VfehTA8P_vsY12L3t9",
 				"name": "Ratt Radio",
-				"album": "https://i.imgur.com/69iOel7.png",
+				"album": "https://i.imgur.com/AjIkXuu.png",
 				"bg": "https://i.imgur.com/fwsdaAD.png"
 			},
 			{
@@ -196,6 +202,14 @@
 				"name": "War-Religion-Folk Radio",
 				"album": "https://i.imgur.com/0EAF2ST.png",
 				"bg": "https://i.imgur.com/RoI3q6L.png"
+			}
+		],
+		[
+			{
+				"id": "PLGgeOJev8QMT35CRsSFnE5Ye74DO9x5eM",
+				"name": "Christmas Radio",
+				"album": "https://i.imgur.com/Aw2SukH.png",
+				"bg": "https://media.giphy.com/media/ZHXz9MZbJI1YA/giphy.gif"
 			}
 		]
 		

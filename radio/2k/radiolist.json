@@ -14,6 +14,20 @@
 				"bg": "https://i.imgur.com/CkY7Se2.png"
 			}
 			
+		],
+		[
+			{
+				"file": "caves",
+				"name": "Caves Radio",
+				"album": "https://i.imgur.com/TFkMwzn.png",
+				"bg": "https://i.imgur.com/E6Ev8dS.png"
+			},
+			{
+				"file": "colind8",
+				"name": "CD8 Radio",
+				"album": "https://i.imgur.com/nuSNttV.png",
+				"bg": "https://i.imgur.com/94LXxTO.png"
+			}
 		]
 	]
 }

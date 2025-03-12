@@ -1,0 +1,401 @@
+{
+	"radiolist": [
+		
+		{
+			"id": "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
+			"name": "Fungi Radio",
+			"section": "Main",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/flXLkQI.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQoMGfGwD2QGLbLAP-PhyR8",
+			"name": "Fungames Radio",
+			"section": "Main",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/QmRFxWl.png",
+			"bg": "https://i.imgur.com/CkY7Se2.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQogKZWlT4LbNO6WJg_3zkP",
+			"name": "Bungus Radio",
+			"section": "Main",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/bJ3m29W.png",
+			"bg": "https://i.imgur.com/NxVSu9l.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTcONdQSl0F0y3zgu4gi78f",
+			"name": "Shroominati Originals Radio",
+			"section": "Main",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/5Ovi3eu.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMS2yQeRfRoi6kTbwQ0jbzm-",
+			"name": "CD8 Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/nuSNttV.png",
+			"bg": "https://i.imgur.com/94LXxTO.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQ0vhvR6tPmM70yrkTVal1u",
+			"name": "kiwi Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/u34fUwX.png",
+			"bg": "https://i.imgur.com/xDzM4dI.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQtUmrKwVybbld_kDjnVJak",
+			"name": "Venom Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/Qi3RC1z.png",
+			"bg": "https://i.imgur.com/zD2Efpf.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRrt-SjS4xpjFL6WRAirdPL",
+			"name": "Gary Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/rHrbjkE.png",
+			"bg": "https://i.imgur.com/797FxyW.png"
+		},
+		{
+			"id": "PLGgeOJev8QMS0vG1qHDRPR9CkHXjRKTAp",
+			"name": "Skeltals Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/twif5fJ.gif",
+			"bg": "https://i.imgur.com/QAtvasr.jpeg"
+		},
+		{
+			"id": "PLGgeOJev8QMS2VShq48QvatsyLzWU3gbX",
+			"name": "Bada Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/GpXaRzJ.png",
+			"bg": "https://i.imgur.com/fia1QHB.jpeg"
+		},
+		{
+			"id": "PLGgeOJev8QMQHxTRLSli2Eyfx6NK68uUy",
+			"name": "Weird Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/GYNyBov.png",
+			"bg": "https://i.imgur.com/L0sfRh7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQk72VfehTA8P_vsY12L3t9",
+			"name": "Ratt Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/AjIkXuu.png",
+			"bg": "https://i.imgur.com/fwsdaAD.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQZ9HVrOjqN0to_w5h9LwTZ",
+			"name": "Dee Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/9Hasmqa.png",
+			"bg": "https://i.imgur.com/X4NwivY.png"
+		},
+		{
+			"id": "PLGgeOJev8QMSczyw_2cIsQuBh0mrb1LQg",
+			"name": "Rob Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/K2O9zND.png",
+			"bg": "https://i.imgur.com/IHd30RH.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRRNJYQTlnwuUcmUdg9hX2o",
+			"name": "Dapper Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/6D3T8R9.png",
+			"bg": "https://i.imgur.com/zwHCvJP.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTxB-ujItwN0k4QYn6FDWAN",
+			"name": "Caves Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/TFkMwzn.png",
+			"bg": "https://i.imgur.com/E6Ev8dS.png"
+		},
+		{
+			"id": "PLGgeOJev8QMSxeG0b8ac5lyLBAreJyLa4",
+			"name": "Jon Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/BGEn83g.png",
+			"bg": "https://i.imgur.com/m7oNhht.jpeg"
+		},
+		{
+			"id": "PLGgeOJev8QMTSFT__FjyXAoynrB_U_SOR",
+			"name": "Ewick Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/3uzlD25.png",
+			"bg": "https://i.imgur.com/tt2R2yb.gif"
+		},
+		{
+			"id": "PLGgeOJev8QMS-4Q_dldSKVahepC1v7hgQ",
+			"name": "Wosk Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/812Vmpv.png",
+			"bg": "https://i.imgur.com/nlJBOJw.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQTDZSpnndKK3K4hNfXyS2N",
+			"name": "Classical Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/CygmgKs.png",
+			"bg": "https://i.imgur.com/MnYD4kL.png"
+		},
+		{
+			"id": "PLGgeOJev8QMThh-Fo_q9rmlX40fJP4K_s",
+			"name": "Disco Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/TKmg4nm.png",
+			"bg": "https://media1.tenor.com/m/5Vgp-bUL1AMAAAAC/peter-griffin-roller-skates.gif"
+		},
+		{
+			"id": "PLGgeOJev8QMSqsitQnd9MACPpKBVYIePt",
+			"name": "EDM Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/ukA8eML.png",
+			"bg": "https://i.imgur.com/9A7aioM.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTrZUXLTJW5pHo1U9eBESUi",
+			"name": "Electrofunk Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/ZOBkf0X.png",
+			"bg": "https://i.imgur.com/mSQzrTI.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRWaYbVnJocIXm_WNfQIYM6",
+			"name": "ERM Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/G6Ar3nj.png",
+			"bg": "https://i.imgur.com/dHKjN2r.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTxp1FhPLLIGhA8BqK_tdh1",
+			"name": "HIPHOP Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/mQU9390.png",
+			"bg": "https://i.imgur.com/WpJHAox.png"
+		},
+		{
+			"id": "PLGgeOJev8QMS_CM2nl6kAB9RoimAAwMeF",
+			"name": "Jazz&Blues Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/ee2dam6.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRo5UukZ5xPWzWS3nEFX4sy",
+			"name": "J/K POP Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/oi3v1fA.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQa-vksc-2dMlTAJ-1DZjjb",
+			"name": "Metal Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/x4zXjja.png",
+			"bg": "https://i.imgur.com/DgLcDQj.png"
+		},
+		{
+			"id": "PLGgeOJev8QMSjewFGNCZZD250T9A73WhC",
+			"name": "NOVELTY Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/ZX0bLKQ.png",
+			"bg": "https://i.imgur.com/UnxkStK.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRqT0ZQV7Ub49J5Pd9WD4z2",
+			"name": "Pop Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/X7bzxYP.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMQqvFiu2UzO0uwTv0YffAu3",
+			"name": "Rock Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/fUNwEYh.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMSpXjcqVFvu7uHELJdOZKS8",
+			"name": "TV/MOVIE Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/JpnZCio.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMT-i5ncIV-6W9O_In-MFEKM",
+			"name": "War-Religion-Folk Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/0EAF2ST.png",
+			"bg": "https://i.imgur.com/RoI3q6L.png"
+		},
+		{
+			"id": "PLGgeOJev8QMT35CRsSFnE5Ye74DO9x5eM",
+			"name": "Christmas Radio",
+			"section": "Holiday",
+			"unlock_method": "toggle",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/Aw2SukH.png",
+			"bg": "https://media.giphy.com/media/ZHXz9MZbJI1YA/giphy.gif"
+		},
+		{
+			"id": "PLGgeOJev8QMRvqYxTbEudD46jk4GGb8x5",
+			"name": "Workout Radio",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "body",
+			"album": "https://i.imgur.com/s9g1aWn.png",
+			"bg": "https://media1.tenor.com/m/GSgNIKY5ti8AAAAC/warioware-jimmy-t.gif"
+		},
+		{
+			"id": "PLGgeOJev8QMQW-Tmn49SjBgoG8F71nO3p",
+			"name": "Deep Rock Galactic OST",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "drg",
+			"album": "https://images.squarespace-cdn.com/content/v1/5925832e03596efb6d4b502a/1496757337963-14PYPM0BHVS23XDMOPF5/Picture4_400P.png",
+			"bg": "https://media.tenor.com/1NiPvBE2QLkAAAAd/deep-rock-deep-rock-galactic.gif"
+		},
+		{
+			"id": "PLqdZ4XBxBxJZLEiJ71tNWPacovns5kVYt",
+			"name": "The Place",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "place",
+			"album": "https://i.imgur.com/NQfPcKE.png",
+			"bg": "https://i.imgur.com/qaLK0rP.png"
+		},
+		{
+			"id": "PLqdZ4XBxBxJYuO51AhvJ8r2J29hnZfXJl",
+			"name": "Shrek Radio",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "shrek",
+			"album": "https://i.imgur.com/JoqGetT.png",
+			"bg": "https://i.imgur.com/NxVSu9l.png"
+		},
+		{
+			"id": "PLLTKEscjPa7uD8HGUzSvYSHcEXNRnL7ql",
+			"name": "Hotline Miami Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/jV7EqlS.png",
+			"bg": "https://i.imgur.com/dt5MLfL.gif"
+		},
+		{
+			"id": "PLliR819cR9yqVvMO1ln6NSKCsfWZ3bzSj",
+			"name": "Hi-Fi Rush Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/QrxxIYn.png",
+			"bg": "https://i.imgur.com/5lKm7df.png"
+		},
+		{
+			"id": "PLY9u9wC7ApRJk-tG4_pBtH6ubEJ7svnOB",
+			"name": "Celeste Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/KgZzzCj.png",
+			"bg": "https://i.imgur.com/LNmf70z.png"
+		},
+		{
+			"id": "PLl_HBPcuvPf0NPnPCGyhASvvmkJTWENUI",
+			"name": "LISA Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/uu1YVhC.png",
+			"bg": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/335670/a1d91019c63853b091088fe0e6e1057e41c1d7fb.jpg"
+		},
+		{
+			"id": "PLxDh5x6BZY8cpIiThmuJTyrugMHqrvJTP",
+			"name": "Payday 2 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/0Z74sZO.png",
+			"bg": "https://i.imgur.com/tuEyrSq.png"
+		},
+		{
+			"id": "PLhFC8pd7oZvwJYhjmpZVyaKG7CUNoVvae",
+			"name": "Necrodancer Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/61aCqb1.png",
+			"bg": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/247080/379e1e70e7499e8a497aa1d8c176bafac5d49185.jpg"
+		}
+	]
+}
