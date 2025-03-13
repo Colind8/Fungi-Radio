@@ -10,7 +10,7 @@ radio_shuffle = false;
 radiolist_open = false;
 started = false;
 starting = true;
-const radiolist_albums = document.getElementsByClassName("radiolist_albums");
+const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
 
 $.getJSON('/radio/2k/radiolist.json', function(data) {
 	//Code vomit
@@ -27,13 +27,14 @@ $.getJSON('/radio/2k/radiolist.json', function(data) {
 	radiolist_string = "";
 	for (a = 0; a < radio_data.radiolist.length; a++) {
 		for (b = 0; b < radio_data.radiolist[a].length; b++) {
-			radiolist_string += `<img class="radiolist_albums" draggable="false" src="${radio_data.radiolist[a][b].album}" onclick="radiolist_select(${a},${b})" title="${radio_data.radiolist[a][b].name}">`;
+			radiolist_string += `<div class="radiolist_album_div"><img class="radiolist_albums" draggable="false" src="${radio_data.radiolist[a][b].album}" onclick="radiolist_select(${a},${b})" title="${radio_data.radiolist[a][b].name}"></div>`;
 		}
 		if (a < radio_data.radiolist.length - 1) {
 			radiolist_string += `<hr>`
 		}
 	}
 	radiolist_string += `<p>This is a special instance of Fungi Radio that includes over 2000 songs! Also includes Fungames Radio with over 1000 songs!</p>`
+	radiolist_string += `<p><a href="./radio.html">Switch to Fungi Radio</a></p>`;
 	radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`
 
 	document.getElementById("radiolist").innerHTML += radiolist_string;

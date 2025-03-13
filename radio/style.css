@@ -177,13 +177,13 @@ html {
 
 .settings_button {
 	padding: 2px 2px 2px 2px;
-	background-color: rgba(0,0,0,0.5);
+	background-color: rgba(75,75,75,0.5);
 	border: none;
-	color: #555555;
+	color: #dddddd;
 }
 
 .settings_button:hover {
-	background-color: rgba(100,100,100,0.5);
+	background-color: rgba(150,150,150,0.5);
 	color: #ffffff;
 }
 
@@ -227,6 +227,10 @@ html {
 
 .radiolist_albums {
 	width: 8em;
+}
+
+.radiolist_album_div {
+	display: inline-block;
 	margin: 0.1em;
 	transform: scaleY(0);
 }

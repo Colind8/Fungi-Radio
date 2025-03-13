@@ -15,7 +15,8 @@ starting = true;
 loop_enabled = false;
 loop_wait = false;
 customizing_radiolist = false;
-const radiolist_albums = document.getElementsByClassName("radiolist_albums");
+radiolist_speed = 0.05;
+const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 if (save_data) {
@@ -30,7 +31,9 @@ if (save_data) {
 	"iframe": false,
 	"disabled_radios": [],
 	"secrets_found": [],
-	"image_rendering": 0
+	"image_rendering": 0,
+	"speed": 0,
+	"display_names": false
 }`);
 	begin_loading();
 }
@@ -54,7 +57,7 @@ function load() {
 	dataobj = JSON.parse(dataobj);
 	
 	if (dataobj.version == 0) { // Update from version 0 to 1
-		if (dev_logs) {
+		if (dataobj.devlogs) {
 			console.log(`Updating from version 0 to 1`);
 		}
 		let new_dataobj = {
@@ -65,6 +68,25 @@ function load() {
 			disabled_radios: dataobj.disabled_radios,
 			secrets_found: dataobj.secrets_found,
 			image_rendering: 0
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
+	if (dataobj.version == 1) { // Update from version 1 to 2
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 1 to 2`);
+		}
+		let new_dataobj = {
+			version: 2,
+			extra_controls: dataobj.extra_controls,
+			devlogs: dataobj.devlogs,
+			iframe: dataobj.iframe,
+			disabled_radios: dataobj.disabled_radios,
+			secrets_found: dataobj.secrets_found,
+			image_rendering: dataobj.image_rendering,
+			speed: 0,
+			display_names: false
 		}
 		
 		dataobj = new_dataobj;
@@ -110,6 +132,7 @@ function begin_loading() {
 		}*/
 		radiolist_string = generate_radiolist(radio_data);
 		radiolist_string += `<p><button class="settings_button" onclick="open_settings(1)">Open Settings</button></p>`
+		radiolist_string += `<p><a href="./radio2000.html">Switch to Fungi Radio 2000</a></p>`;
 		radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`
 		
 		
@@ -128,6 +151,8 @@ function begin_loading() {
 			settings_string += `<p>Toggle console logs: <button onclick="setting_toggle_logs()" id="settingbutton_toggle_logs" class="settings_button">Disabled</button></p>`;
 		}
 		settings_string += `<p>Image-rendering: <button onclick="setting_toggle_image_rendering(-1)" id="settingbutton_toggle_image_rendering" class="settings_button">???</button></p>`;
+		settings_string += `<p>Animation Speed: <button onclick="setting_toggle_speed(-1)" id="settingbutton_toggle_speed" class="settings_button">???</button></p>`;
+		settings_string += `<p>Radio Names: <button onclick="setting_toggle_radio_names(-1)" id="settingbutton_toggle_radio_names" class="settings_button">???</button></p>`;
 		
 		settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
 		settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
@@ -178,6 +203,8 @@ function onPlayerReady(event) {
 		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
 	}
 	setting_toggle_image_rendering(0);
+	setting_toggle_speed(0);
+	setting_toggle_radio_names(0);
 }
 
 
@@ -523,10 +550,11 @@ function radiolist_openup() {
 
 function radiolist_display() {
 	menu_open = true;
+	setting_toggle_radio_names(0);
 	document.getElementById("album").style.display = "none";
 	document.getElementById("menu").style.display = "block";
 	for (i = 0; i < radiolist_albums.length; i++) {
-		radiolist_albums[i].style.animation = "album_fadein 0.1s ease-in " + (i * 0.05) + "s forwards";
+		radiolist_albums[i].style.animation = "album_fadein 0.1s ease-in " + (i * radiolist_speed) + "s forwards";
 	}
 }
 
@@ -656,6 +684,80 @@ function setting_toggle_image_rendering(type) {
 	}
 }
 
+function setting_toggle_speed(type) {
+	let animation_speed = dataobj.speed;
+	if (type == -1) {
+		animation_speed++;
+		if (animation_speed > 6) {
+			animation_speed = 0;
+		}
+	}
+	dataobj.speed = animation_speed;
+	switch (animation_speed) {
+		case 0:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Normal";
+			radiolist_speed = 0.05
+			break;
+		case 1:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Fast";
+			radiolist_speed = 0.01
+			break;
+		case 2:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Faster";
+			radiolist_speed = 0.005
+			break;
+		case 3:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Instant";
+			radiolist_speed = 0
+			break;
+		case 4:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Slowest";
+			radiolist_speed = 1
+			break;
+		case 5:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Slower";
+			radiolist_speed = 0.5
+			break;
+		case 6:
+			document.getElementById("settingbutton_toggle_speed").innerText = "Slow";
+			radiolist_speed = 0.1
+			break;
+	}
+}
+
+function setting_toggle_radio_names(type) {
+	let toggle_radio_names = dataobj.display_names;
+	if (type == -1) {
+		if (toggle_radio_names) {
+			toggle_radio_names = false;
+		} else {
+			toggle_radio_names = true;
+		}
+	}
+	dataobj.display_names = toggle_radio_names;
+	switch (toggle_radio_names) {
+		case false:
+			document.getElementById("settingbutton_toggle_radio_names").innerText = "Disabled";
+			for (i=0; i < radio_data.radiolist.length; i++) {
+				if (document.getElementById(`radio_name_${i}`)) {
+					document.getElementById(`radio_name_${i}`).style.display = "none";
+					document.getElementById(`radio_name_${i}`).style.margin = "0em";
+				}
+			}
+			break;
+		case true:
+			document.getElementById("settingbutton_toggle_radio_names").innerText = "Enabled";
+			for (i=0; i < radio_data.radiolist.length; i++) {
+				if (document.getElementById(`radio_name_${i}`)) {
+					document.getElementById(`radio_name_${i}`).style.display = "block";
+					document.getElementById(`radio_name_${i}`).style.marginLeft = "0.5em";
+					document.getElementById(`radio_name_${i}`).style.marginRight = "0.5em";
+				}
+			}
+			break;
+	}
+}
+
 function generate_radiolist(r_data) {
 	r_string = ""
 	sections = [];
@@ -688,15 +790,24 @@ function generate_radiolist(r_data) {
 					if (customizing_radiolist == false) {
 						if (dataobj.disabled_radios.includes(b) == false) {
 							items_exist_in_section = true;
+							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" draggable="false" src="${r_data.radiolist[b].album}" onclick="radiolist_select(${b})" title="${r_data.radiolist[b].name}">`;
+							r_string += `<div id="radio_name_${b}">${r_data.radiolist[b].name}</div>`
+							r_string += `</div>`
 						}
 					} else {
 						if (dataobj.disabled_radios.includes(b) == false) {
 							items_exist_in_section = true;
+							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" id="album_${b}" style="filter: none;" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable(${b})" title="${r_data.radiolist[b].name}">`;
+							r_string += `<div id="radio_name_${b}">${r_data.radiolist[b].name}</div>`
+							r_string += `</div>`
 						} else {
 							items_exist_in_section = true;
+							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" id="album_${b}" style="filter: blur(5px);" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable(${b})" title="${r_data.radiolist[b].name}">`;
+							r_string += `<div id="radio_name_${b}">${r_data.radiolist[b].name}</div>`
+							r_string += `</div>`
 						}
 					}
 				}
@@ -749,6 +860,7 @@ function finish_customization() {
 	radiolist_string = "";
 	radiolist_string = generate_radiolist(radio_data);
 	radiolist_string += `<p><button class="settings_button" onclick="open_settings(1)">Open Settings</button></p>`;
+	radiolist_string += `<p><a target="_blank" href="./radio2000.html">Fungi Radio 2000</a></p>`;
 	radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`;
 	
 	document.getElementById("radiolist").innerHTML = radiolist_string;
