@@ -328,6 +328,7 @@ function switch_radio(qwer) {
 	document.getElementById('status').innerHTML = "Loading...";
 	player.stopVideo();
 	radio_id = radio_data.radiolist[qwer].id;
+	document.getElementById('favicon').href = `${radio_data.radiolist[qwer].album}`;
 	document.getElementById('album_art')
 		.setAttribute("src", radio_data.radiolist[qwer].album);
 	radio_name = radio_data.radiolist[qwer].name;
