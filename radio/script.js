@@ -891,6 +891,7 @@ function run_code() {
 		radiolist_string = "";
 		radiolist_string = generate_radiolist(radio_data);
 		radiolist_string += `<p><button class="settings_button" onclick="open_settings(1)">Open Settings</button></p>`;
+		radiolist_string += `<p><a href="./radio2000.html">Switch to Fungi Radio 2000</a></p>`;
 		radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`;
 		
 		document.getElementById("radiolist").innerHTML = radiolist_string;
