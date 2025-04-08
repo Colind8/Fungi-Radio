@@ -558,6 +558,51 @@
 			"unlock_password": "gary",
 			"album": "https://i.imgur.com/rHrbjkE.png",
 			"bg": "https://i.imgur.com/797FxyW.png"
+		},
+		{
+			"id": "PLfS0E6mvnAIdS55pZYjbVxd2G1tkGY5XX",
+			"name": "Industrial Radio",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "industrial",
+			"album": "https://i.imgur.com/tn12RSr.png",
+			"bg": "https://www.investopedia.com/thmb/foVle7qLkXh2kgr1S6EgVE7EOtc=/2121x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1007291702-1917f938359e4f51a039db086b18f585.jpg"
+		},
+		{
+			"id": "PLefKpFQ8Pvy5aCLAGHD8Zmzsdljos-t2l",
+			"name": "Minecraft Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://minecraft.wiki/images/Diamond_Pickaxe_JE3_BE3.png",
+			"bg": "https://minecraft.wiki/images/Clear_panorama.png"
+		},
+		{
+			"id": "PLGgeOJev8QMRh8dpHSSKwqqGSILv79uQn",
+			"name": "Minecraft Parodies Radio",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "minecraft",
+			"album": "https://i.imgur.com/2HRLunx.png",
+			"bg": "https://wallpapercave.com/wp/gEPOrzw.jpg"
+		},
+		{
+			"id": "PLGgeOJev8QMR3ithkjK0g052AWqK5raIL",
+			"name": "Oldies Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/1OBMdSu.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTFHX5HNpcdhUYv1CZJGMCA",
+			"name": "Chill Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/gjUK8bb.png",
+			"bg": "https://i.imgur.com/ksRPfI7.png"
 		}
 	]
 }

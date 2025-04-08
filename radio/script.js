@@ -25,7 +25,7 @@ if (save_data) {
 } else {
 	console.log(`localStorage data not found! Loading...`);
 	dataobj = JSON.parse(`{
-	"version": 1,
+	"version": 3,
 	"extra_controls": false,
 	"devlogs": false,
 	"iframe": false,
@@ -33,12 +33,16 @@ if (save_data) {
 	"secrets_found": [],
 	"image_rendering": 0,
 	"speed": 0,
-	"display_names": false
+	"display_names": false,
+	"startup_pause": false,
+	"startup_volume": 100,
+	"startup_radio": 0
 }`);
 	begin_loading();
 }
 
 function save() {
+	set_start_volume();
 	save_data = JSON.stringify(dataobj);
 	save_data = window.btoa(save_data);
 	localStorage.setItem("radio_data", save_data);
@@ -87,6 +91,28 @@ function load() {
 			image_rendering: dataobj.image_rendering,
 			speed: 0,
 			display_names: false
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
+	if (dataobj.version == 2) { // Update from version 2 to 3
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 2 to 3`);
+		}
+		let new_dataobj = {
+			version: 3,
+			extra_controls: dataobj.extra_controls,
+			devlogs: dataobj.devlogs,
+			iframe: dataobj.iframe,
+			disabled_radios: dataobj.disabled_radios,
+			secrets_found: dataobj.secrets_found,
+			image_rendering: dataobj.image_rendering,
+			speed: dataobj.speed,
+			display_names: false,
+			startup_pause: false,
+			startup_volume: 100,
+			startup_radio: 0
 		}
 		
 		dataobj = new_dataobj;
@@ -153,9 +179,11 @@ function begin_loading() {
 		settings_string += `<p>Image-rendering: <button onclick="setting_toggle_image_rendering(-1)" id="settingbutton_toggle_image_rendering" class="settings_button">???</button></p>`;
 		settings_string += `<p>Animation Speed: <button onclick="setting_toggle_speed(-1)" id="settingbutton_toggle_speed" class="settings_button">???</button></p>`;
 		settings_string += `<p>Radio Names: <button onclick="setting_toggle_radio_names(-1)" id="settingbutton_toggle_radio_names" class="settings_button">???</button></p>`;
+		settings_string += `<p>Pause on Selecting Radio: <button onclick="setting_toggle_startup_pause(-1)" id="setting_toggle_startup_pause" class="settings_button">???</button></p>`;
+		settings_string += `<form onsubmit="return set_start_volume()"><label for="form_volume">Code: </label><input autocomplete="off" type="number" min="0" max="100" id="form_volume" name="form_volume" value="100" class="form_input"></form>`;
 		
 		settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
-		settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
+		settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input class="form_input" autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
 		settings_string += `<p><button class="settings_button" onclick="open_settings(0)">Close Settings</button></p>`
 		settings_string += `<p><button class="settings_button" onclick="save()">Save settings to LocalStorage</button></p>`
 		settings_string += `<p><button class="settings_button" onclick="delete_save()">Delete LocalStorage data</button></p>`
@@ -168,7 +196,6 @@ function begin_loading() {
 
 
 function onYouTubeIframeAPIReady() {
-
 	player = new YT.Player('player', {
 		height: '390',
 		width: '640',
@@ -185,7 +212,21 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
 	//event.target.playVideo();
 	starting = false;
-	document.getElementById("startstatus").innerHTML = `Click anywhere to play!`
+	let startstatuses = [
+		"Click anywhere to play!",
+		"Tune in!",
+		"Turn on!",
+		"Rock on!",
+		"Play now!",
+		"Who's gonna rock the place?",
+		"We're forever gonna rock the place.",
+		"(place, place)",
+		"Tune in, turn on",
+		"We're going all city!",
+		"Won't you take me to Funkytown?",
+		"Also try Terrawars!"
+	]
+	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
 	if (!dataobj.iframe) {
 		document.getElementById("player").style.display = "none";
 		document.getElementById("settingbutton_toggle_iframe").innerText = "Disabled";
@@ -202,9 +243,12 @@ function onPlayerReady(event) {
 		document.getElementById("control_loop").style.display = "block";
 		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
 	}
+	document.getElementById(`form_volume`).value = dataobj.startup_volume;
+	volume_change(-100 + (Number(dataobj.startup_volume)) );
 	setting_toggle_image_rendering(0);
 	setting_toggle_speed(0);
 	setting_toggle_radio_names(0);
+	setting_toggle_startup_pause(0);
 }
 
 
@@ -232,10 +276,14 @@ function mute() {
 function volume_change(num) {
 	current_volume = player.getVolume();
 	
-	if ((current_volume + num) > 100) {
+	if (dev_logs) {
+		console.log(`changing volume from ${current_volume} to ${current_volume + num}`)
+	}
+	
+	if ((current_volume + num) >= 100) {
 		player.setVolume(100);
 		document.getElementById("volume_status").innerHTML = `100%`;
-	} else if ((current_volume + num) < 0) {
+	} else if ((current_volume + num) <= 0) {
 		player.setVolume(0);
 		
 		document.getElementById("volume_status").innerHTML = `0%`;
@@ -357,7 +405,10 @@ function reshuffle(ri) {
 
 function start() {
 	if (starting == false && started == false) {
-		switch_radio(0);
+		document.getElementById("body").style.backgroundImage = `url("${radio_data.radiolist[dataobj.startup_radio].bg}")`;
+		document.getElementById("containerbg").style.backgroundImage = `url("${radio_data.radiolist[dataobj.startup_radio].bg}")`;
+		radio_current = dataobj.startup_radio;
+		switch_radio(dataobj.startup_radio);
 		//console.log("Epic");
 		document.getElementById("startcontainer").style.animation = "start_fade 0.5s ease-in forwards"
 		setTimeout(start2, 500);
@@ -368,6 +419,7 @@ function start() {
 function start2() {
 	document.getElementById("startcontainer").style.display = "none";
 	document.getElementById("album_art").style.animation = "album_fadein 0.1s ease-in forwards";
+	
 	if (player.getPlayerState() == 5) {
 		if (dev_logs) {
 			console.log(`Playlist failed to load, starting reshuffle search.`);
@@ -375,6 +427,7 @@ function start2() {
 		reshuffle_search();
 	} else {
 		player.playVideo();
+		
 	}
 	setTimeout(album_animate, 100);
 }
@@ -467,6 +520,10 @@ function onPlayerStateChange(event) {
 			if (unmutein == 2) {
 				unmutein++;
 				player.unMute();
+				if (dataobj.startup_pause) {
+					player.pauseVideo()
+					document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+				}
 			}
 			if (unmutein > 2) {
 				document.getElementById('ticker').innerHTML = `${document.getElementById('player').title} <a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">🔗</a> - ${radio_name}`;
@@ -645,7 +702,7 @@ function setting_toggle_logs() {
 	if (dev_logs) {
 		dev_logs = false;
 		dataobj.devlogs = false;
-		console.log(`console logs enabled!`);
+		console.log(`console logs disabled!`);
 		document.getElementById("settingbutton_toggle_logs").innerText = "Disabled";
 	} else {
 		dev_logs = true;
@@ -664,7 +721,9 @@ function setting_toggle_image_rendering(type) {
 		}
 	}
 	dataobj.image_rendering = image_renderer;
-	console.log(`Switching image-rendering to ${image_renderer}`);
+	if (dev_logs) {
+		console.log(`Switching image-rendering to ${image_renderer}`);
+	}
 	switch (image_renderer) {
 		case 0:
 			document.getElementById("settingbutton_toggle_image_rendering").innerText = "Default";
@@ -726,6 +785,23 @@ function setting_toggle_speed(type) {
 	}
 }
 
+function setting_toggle_startup_pause(type) {
+	let startup_pause = dataobj.startup_pause;
+	if (type == -1) {
+		if (startup_pause) {
+			startup_pause = false;
+		} else {
+			startup_pause = true;
+		}
+	}
+	dataobj.startup_pause = startup_pause;
+	if (startup_pause) {
+		document.getElementById("setting_toggle_startup_pause").innerText = "Enabled";
+	} else {
+		document.getElementById("setting_toggle_startup_pause").innerText = "Disabled";
+	}
+}
+
 function setting_toggle_radio_names(type) {
 	let toggle_radio_names = dataobj.display_names;
 	if (type == -1) {
@@ -757,6 +833,13 @@ function setting_toggle_radio_names(type) {
 			}
 			break;
 	}
+}
+
+function set_start_volume() {
+	let start_volume = document.getElementById("form_volume").value;
+	
+	dataobj.startup_volume = start_volume;
+	return false;
 }
 
 function generate_radiolist(r_data) {
@@ -828,19 +911,40 @@ function generate_radiolist(r_data) {
 
 function setting_customize() {
 	customizing_radiolist = true;
+	selecting_first_radio = false;
 	radiolist_string = "";
 	radiolist_string = generate_radiolist(radio_data);
+	radiolist_string += `<p><img style="width: 8em;" id="change_first_radio" src="/radio/svg/star_empty.png" onclick="change_first_radio()" title="Change radio on startup"></p>`
 	radiolist_string += `<p><button class="settings_button" onclick="finish_customization()">Finish Customization</button></p>`
 	
 	document.getElementById("radiolist").innerHTML = radiolist_string;
 	let radiolist_custom_albums = document.getElementsByClassName("radiolist_albums");
+	document.getElementById(`album_${dataobj.startup_radio}`).style.border = "yellow 2px solid";
 	open_settings(0);
 	/*for (i = 0; i < radiolist_custom_albums.length; i++) {
 		radiolist_custom_albums[i].style.animation = "album_fadein 0.1s ease-in " + (i * 0.05) + "s forwards";
 	}*/
 }
 
+function change_first_radio() {
+	if (selecting_first_radio) {
+		selecting_first_radio = false;
+		document.getElementById(`change_first_radio`).src = "/radio/svg/star_empty.png";
+	} else {
+		selecting_first_radio = true;
+		document.getElementById(`change_first_radio`).src = "/radio/svg/star_full.png";
+	}
+	
+}
+
 function radio_disable(id) {
+	if (selecting_first_radio == true) {
+		document.getElementById(`album_${dataobj.startup_radio}`).style.border = "yellow 2px none";
+		dataobj.startup_radio = id;
+		document.getElementById(`album_${id}`).style.border = "yellow 2px solid";
+		return;
+	}
+	
 	if (dataobj.disabled_radios.includes(id)) {
 		if (dev_logs) {
 			console.log(`Enabling: ${id}`);

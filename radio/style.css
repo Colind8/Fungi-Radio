@@ -271,13 +271,13 @@ a:hover {
 	display: none;
 }
 
-#form_code {
+.form_input {
 	background-color: #222222;
 	outline: none;
 	border-color: #444444;
 	color: #dddddd;
 }
-#form_code:focus {
+.form_input:focus {
 	border-color: #aaaaaa;
 }
 
