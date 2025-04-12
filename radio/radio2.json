@@ -603,6 +603,33 @@
 			"unlock_password": "NA",
 			"album": "https://i.imgur.com/gjUK8bb.png",
 			"bg": "https://i.imgur.com/ksRPfI7.png"
+		},
+		{
+			"id": "PLijWMZSezJya9eFKD9IMZ5u92agm35J9o",
+			"name": "Sound Shapes Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/KjJercE.png",
+			"bg": "https://www.gamespot.com/a/uploads/original/1197/11970954/2377114-soundshapes_ps4_cities3.png"
+		},
+		{
+			"id": "PLeBnKAv5bQsoSmE2gmxghX96r1jZGHiz7",
+			"name": "Starbound Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/CQLOScm.png",
+			"bg": "https://starbounder.org/mediawiki/images/BG.jpg"
+		},
+		{
+			"id": "PLZuZrScKjWOMAEEBEGTmAGtmmlg6QY7bC",
+			"name": "Persona 5 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon_thumb/218a0aefd1d1a4be65601cc6ddc1520e.png",
+			"bg": "https://images8.alphacoders.com/888/888559.jpg"
 		}
 	]
 }
