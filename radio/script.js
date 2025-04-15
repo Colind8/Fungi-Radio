@@ -18,6 +18,7 @@ customizing_radiolist = false;
 radiolist_speed = 0.05;
 const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
 const delay = ms => new Promise(res => setTimeout(res, ms));
+ticker_id = 0;
 
 if (save_data) {
 	console.log(`localStorage data found! Loading...`);
@@ -180,7 +181,7 @@ function begin_loading() {
 		settings_string += `<p>Animation Speed: <button onclick="setting_toggle_speed(-1)" id="settingbutton_toggle_speed" class="settings_button">???</button></p>`;
 		settings_string += `<p>Radio Names: <button onclick="setting_toggle_radio_names(-1)" id="settingbutton_toggle_radio_names" class="settings_button">???</button></p>`;
 		settings_string += `<p>Pause on Selecting Radio: <button onclick="setting_toggle_startup_pause(-1)" id="setting_toggle_startup_pause" class="settings_button">???</button></p>`;
-		settings_string += `<form onsubmit="return set_start_volume()"><label for="form_volume">Code: </label><input autocomplete="off" type="number" min="0" max="100" id="form_volume" name="form_volume" value="100" class="form_input"></form>`;
+		settings_string += `<form onsubmit="return set_start_volume()"><label for="form_volume">Volume on Startup: </label><input autocomplete="off" type="number" min="0" max="100" id="form_volume" name="form_volume" value="100" class="form_input"></form>`;
 		
 		settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
 		settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input class="form_input" autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
@@ -573,8 +574,55 @@ reshuffle_search = async () => {
 }
 
 function ticker_scroll_start() {
-	scroll_width = document.getElementById('ticker').scrollWidth;
+	if (dev_logs) {
+		console.log(`starting ticker scroll`);
+	}
+	clearTimeout(ticker_id);
+	ticker_id = setTimeout(ticker_wait, 1000,0) //begins the ticker scroll. It will scroll the div right after one second
 }
+
+function ticker_scroll(dir) {
+	let current_scroll_pos = document.getElementById("ticker").scrollLeft;
+	/*if (dev_logs) {
+		console.log(`ticker scrolling`);
+	}*/
+	switch (dir) {
+		case 0: // scroll right
+			/*if (dev_logs) {
+				console.log(`scrolling ticker right`);
+				console.log(`from: ${current_scroll_pos}`);
+				
+			}*/
+			document.getElementById("ticker").scrollLeft += 1;
+			/*if (dev_logs) {
+				console.log(`to: ${document.getElementById("ticker").scrollLeft}`);
+				
+			}*/
+			if (current_scroll_pos == document.getElementById("ticker").scrollLeft) {
+				ticker_id = setTimeout(ticker_wait, 1000,1);
+			} else {
+				ticker_id = setTimeout(ticker_wait, 50,0);
+			}
+			break;
+		case 1: // scroll left
+			/*if (dev_logs) {
+				console.log(`scrolling ticker left`);
+			}*/
+			document.getElementById("ticker").scrollLeft -= 1;
+			if (current_scroll_pos == document.getElementById("ticker").scrollLeft) {
+				console.log('scrolling left');
+				ticker_id = setTimeout(ticker_wait, 1000,0);
+			} else {
+				ticker_id = setTimeout(ticker_wait, 50,1);
+			}
+			break;
+	}
+}
+
+function ticker_wait(dir) {
+	ticker_scroll(dir);
+}
+
 /*
 function scrollToSmoothly(pos, time) {
     var currentPos = window.pageYOffset;
