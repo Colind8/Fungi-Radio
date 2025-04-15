@@ -610,7 +610,6 @@ function ticker_scroll(dir) {
 			}*/
 			document.getElementById("ticker").scrollLeft -= 1;
 			if (current_scroll_pos == document.getElementById("ticker").scrollLeft) {
-				console.log('scrolling left');
 				ticker_id = setTimeout(ticker_wait, 1000,0);
 			} else {
 				ticker_id = setTimeout(ticker_wait, 50,1);

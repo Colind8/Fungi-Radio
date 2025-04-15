@@ -11,6 +11,7 @@ radiolist_open = false;
 started = false;
 starting = true;
 const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
+ticker_id = 0;
 
 $.getJSON('/radio/2k/radiolist.json', function(data) {
 	//Code vomit
@@ -276,30 +277,36 @@ function onPlayerStateChange(event) {
 }
 
 function ticker_scroll_start() {
-	scroll_width = document.getElementById('ticker').scrollWidth;
+	clearTimeout(ticker_id);
+	ticker_id = setTimeout(ticker_wait, 1000,0) //begins the ticker scroll. It will scroll the div right after one second
 }
-/*
-function scrollToSmoothly(pos, time) {
-    var currentPos = window.pageYOffset;
-    var start = null;
-    if(time == null) time = 500;
-    pos = +pos, time = +time;
-    window.requestAnimationFrame(function step(currentTime) {
-        start = !start ? currentTime : start;
-        var progress = currentTime - start;
-        if (currentPos < pos) {
-            window.scrollTo(0, ((pos - currentPos) * progress / time) + currentPos);
-        } else {
-            window.scrollTo(0, currentPos - ((currentPos - pos) * progress / time));
-        }
-        if (progress < time) {
-            window.requestAnimationFrame(step);
-        } else {
-            window.scrollTo(0, pos);
-        }
-    });
+
+function ticker_scroll(dir) {
+	let current_scroll_pos = document.getElementById("ticker").scrollLeft;
+	switch (dir) {
+		case 0: // scroll right
+			document.getElementById("ticker").scrollLeft += 1;
+			if (current_scroll_pos == document.getElementById("ticker").scrollLeft) {
+				ticker_id = setTimeout(ticker_wait, 1000,1);
+			} else {
+				ticker_id = setTimeout(ticker_wait, 50,0);
+			}
+			break;
+		case 1: // scroll left
+			document.getElementById("ticker").scrollLeft -= 1;
+			if (current_scroll_pos == document.getElementById("ticker").scrollLeft) {
+				ticker_id = setTimeout(ticker_wait, 1000,0);
+			} else {
+				ticker_id = setTimeout(ticker_wait, 50,1);
+			}
+			break;
+	}
 }
-*/
+
+function ticker_wait(dir) {
+	ticker_scroll(dir);
+}
+
 function radiolist_openup() {
 	if (radiolist_open == "true") {
 		return;
