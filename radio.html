@@ -25,17 +25,25 @@
 			<div id="radiolist"></div>
 			<div id="settings_menu"></div>
 		</div>
-		<div id="controls">
-			<div class="control_button" id="control_mute" onclick="mute()"><img draggable="false" width="16px" src="./radio/svg/volume_hi.svg"></div>
-			<div class="control_button" id="control_mute" onclick="volume_change(-5)"><img draggable="false" width="16px" src="./radio/svg/minus.svg"></div>
-			<div class="control_button" id="control_mute" onclick="volume_change(5)"><img draggable="false" width="16px" src="./radio/svg/plus.svg"></div>
-			<div id="volume_status">100%</div>
-			<div class="control_button extra_control" id="control_rewind" onclick="rewind()"><img draggable="false" width="16px" src="./radio/svg/rewind.svg"></div>
-			<div class="control_button" id="control_pause" onclick="pause()"><img draggable="false" width="16px" src="./radio/svg/pause.svg"></div>
-			<div class="control_button" id="control_skip" onclick="skip()"><img draggable="false" width="16px" src="./radio/svg/skip.svg"></div>
-			<div class="control_button extra_control" id="control_loop" onclick="toggle_loop()"><img draggable="false" width="16px" src="./radio/svg/loop_disabled.svg"></div>
-			<div id="status">Loading... </div>
-			<div id="ticker"></div>
+		<div id="control_panel">
+			<div id="controls">
+				<div id="controls_volume">
+					<div class="control_button" id="control_mute" onclick="mute()"><img id="control_mute_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+					<div class="control_button" id="control_voldown" onclick="volume_change(-5)"><img id="control_voldown_img" draggable="false" width="1" height="1" src="./radio/svg/trans.png"></div>
+					<div class="control_button" id="control_volup" onclick="volume_change(5)"><img id="control_volup_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+					<div id="volume_status">100%</div>
+				</div>
+				<div id="controls_playback">
+					<div class="control_button extra_control" id="control_rewind" onclick="rewind()"><img id="control_rewind_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+					<div class="control_button" id="control_pause" onclick="pause()"><img id="control_pause_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+					<div class="control_button" id="control_skip" onclick="skip()"><img id="control_skip_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+					<div class="control_button extra_control" id="control_loop" onclick="toggle_loop()"><img id="control_loop_img" draggable="false" width="16px" src="./radio/svg/trans.png"></div>
+				</div>
+			</div>
+			<div id="ticker_bar">
+				<div id="status">Loading... </div>
+				<div id="ticker"></div>
+			</div>
 		</div>
 	</div>
 	

@@ -58,7 +58,23 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
 	starting = false;
-	document.getElementById("startstatus").innerHTML = `Click anywhere to play!`
+	let startstatuses = [
+		"Click anywhere to play!",
+		"Tune in!",
+		"Turn on!",
+		"Rock on!",
+		"Who's gonna rock the place?",
+		"We're forever gonna rock the place.",
+		"(place, place)",
+		"Tune in, turn on",
+		"We're going all city!",
+		"Won't you take me to Funkytown?",
+		"Also try Terrawars!",
+		"Kick it!",
+		"Let's rock!",
+		"Awwwwww yeaaaaaa!!!"
+	]
+	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
 	//event.target.playVideo();
 }
 
@@ -92,31 +108,31 @@ function volume_change(num) {
 		player.setVolume(current_volume + num);
 		document.getElementById("volume_status").innerHTML = `${current_volume + num}%`;
 	}
-	volume_icon_change(current_volume + num)
+	volume_icon_change(current_volume + num,player.isMuted())
 }
 
 function volume_icon_change(vol,muted) {
 	current_volume = vol;
 	if (muted == 1) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_mute.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `0px`;
 	} else if (current_volume >= 75) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_hi.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-64px`;
 	} else if (current_volume >= 25) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_med.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-48px`;
 	} else if (current_volume >= 5) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_low.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-32px`;
 	} else {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-16px`;
 	}
 }
 
 function pause() {
 	if (player.getPlayerState() == 2) {
 		player.playVideo()
-		document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/pause.svg">`;
+		document.getElementById("control_pause_img").style.backgroundPositionX = `0px`;
 	} else {
 		player.pauseVideo()
-		document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+		document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 	}
 
 }
@@ -124,6 +140,10 @@ function pause() {
 function skip() {
 	//console.log(`Skipping`);
 	load_next_song();
+}
+
+function seek(amt) {
+	player.seekTo(player.getCurrentTime() + amt);
 }
 
 function onError(event) {
@@ -137,6 +157,7 @@ function switch_radio(qw, qwer) {
 	unmutein = 0;
 	player.stopVideo();
 	radio_id = radio_data.radiolist[qw][qwer].file;
+	document.getElementById('favicon').href = `${radio_data.radiolist[qw][qwer].album}`;
 	document.getElementById('album_art')
 		.setAttribute("src", radio_data.radiolist[qw][qwer].album);
 	radio_name = radio_data.radiolist[qw][qwer].name;
@@ -225,6 +246,12 @@ function keycontrols(event) {
 		case "ArrowUp":
 			volume_change(1);
 			break;
+		case "ArrowLeft":
+			seek(-5);
+			break;
+		case "ArrowRight":
+			seek(5);
+			break;
 	}
 }
 
@@ -235,7 +262,7 @@ function keycontrols(event) {
 //////////////////////////////
 */
 function onPlayerStateChange(event) {
-	console.log(event.data);
+	//console.log(event.data);
 	switch (event.data) {
 		case -1:
 			document.getElementById('status').innerHTML = "Switching Song...";
@@ -245,11 +272,12 @@ function onPlayerStateChange(event) {
 			load_next_song();
 			break;
 		case 3:
-			document.getElementById('status').innerHTML = "Switching Song...";
-			document.getElementById('ticker').innerHTML = "";
+			if (document.getElementById('ticker').innerHTML.length < 1) {
+				document.getElementById('status').innerHTML = "Switching Song...";
+			}
 			break;
 		case 1:
-			document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/pause.svg">`;
+			document.getElementById("control_pause_img").style.backgroundPositionX = `0px`;
 			document.getElementById('status').innerHTML = "Now playing... ";
 			if (!radio_shuffle) {
 				player.setShuffle(true);
@@ -264,14 +292,16 @@ function onPlayerStateChange(event) {
 				//player.unMute();
 			}
 			if (unmutein > 2) {
-				//document.getElementById('ticker').innerHTML = `${document.getElementById('player').title} <a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">🔗</a> - ${radio_name}`;
+				//document.getElementById('ticker').innerHTML = `${document.getElementById('player').title} <a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">🔗</a> - ${radio_name}`;	
 			}
-			document.getElementById('ticker').innerHTML = `${document.getElementById('player').title} <a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">🔗</a> - ${radio_name}`;
+			if (document.getElementById('ticker').innerHTML.length < 1) {
+				document.getElementById('ticker').innerHTML = `<a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">${document.getElementById('player').title}</a> - ${radio_name}`;
+			}
 			ticker_scroll_start();
 			break;
 		case 2:
 			document.getElementById('status').innerHTML = "Paused... ";
-			document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+			document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 			break;
 	}
 }

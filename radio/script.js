@@ -218,14 +218,16 @@ function onPlayerReady(event) {
 		"Tune in!",
 		"Turn on!",
 		"Rock on!",
-		"Play now!",
 		"Who's gonna rock the place?",
 		"We're forever gonna rock the place.",
 		"(place, place)",
 		"Tune in, turn on",
 		"We're going all city!",
 		"Won't you take me to Funkytown?",
-		"Also try Terrawars!"
+		"Also try Terrawars!",
+		"Kick it!",
+		"Let's rock!",
+		"Awwwwww yeaaaaaa!!!"
 	]
 	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
 	if (!dataobj.iframe) {
@@ -292,31 +294,31 @@ function volume_change(num) {
 		player.setVolume(current_volume + num);
 		document.getElementById("volume_status").innerHTML = `${current_volume + num}%`;
 	}
-	volume_icon_change(current_volume + num)
+	volume_icon_change(current_volume + num,player.isMuted())
 }
 
 function volume_icon_change(vol,muted) {
 	current_volume = vol;
 	if (muted == 1) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_mute.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `0px`;
 	} else if (current_volume >= 75) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_hi.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-64px`;
 	} else if (current_volume >= 25) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_med.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-48px`;
 	} else if (current_volume >= 5) {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume_low.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-32px`;
 	} else {
-		return document.getElementById("control_mute").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/volume.svg">`;
+		return document.getElementById("control_mute_img").style.backgroundPositionX = `-16px`;
 	}
 }
 
 function pause() {
 	if (player.getPlayerState() == 2) {
 		player.playVideo()
-		document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/pause.svg">`;
+		document.getElementById("control_pause_img").style.backgroundPositionX = `0px`;
 	} else {
 		player.pauseVideo()
-		document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+		document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 	}
 
 }
@@ -339,10 +341,10 @@ function rewind() {
 function toggle_loop() {
 	if (loop_enabled) {
 		loop_enabled = false;
-		document.getElementById('control_loop').innerHTML = `<img draggable="false" width="16px" src="./radio/svg/loop_disabled.svg">`;
+		document.getElementById('control_loop_img').style.backgroundPositionX = `-64px`;
 	} else {
 		loop_enabled = true;
-		document.getElementById('control_loop').innerHTML = `<img draggable="false" width="16px" src="./radio/svg/loop_enabled.svg">`;
+		document.getElementById('control_loop_img').style.backgroundPositionX = `-80px`;
 	}
 }
 
@@ -508,7 +510,7 @@ function onPlayerStateChange(event) {
 			if (dev_logs) {
 				console.log(`EVENT: PLAYING`);
 			}
-			document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/pause.svg">`;
+			document.getElementById("control_pause_img").style.backgroundPositionX = `0px`;
 			document.getElementById('status').innerHTML = "Now playing... ";
 			if (!radio_shuffle) {
 				player.setShuffle(true);
@@ -523,11 +525,13 @@ function onPlayerStateChange(event) {
 				player.unMute();
 				if (dataobj.startup_pause) {
 					player.pauseVideo()
-					document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+					document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 				}
 			}
 			if (unmutein > 2) {
-				document.getElementById('ticker').innerHTML = `${document.getElementById('player').title} <a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">🔗</a> - ${radio_name}`;
+				if (document.getElementById('ticker').innerHTML.length < 1) {
+					document.getElementById('ticker').innerHTML = `<a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">${document.getElementById('player').title}</a> - ${radio_name}`;
+				}
 			}
 			if (dev_logs) {
 				console.log(`unmutein = ${unmutein}`);
@@ -541,15 +545,15 @@ function onPlayerStateChange(event) {
 			}
 			
 			document.getElementById('status').innerHTML = "Paused... ";
-			document.getElementById("control_pause").innerHTML = `<img draggable="false" width="16px" src="./radio/svg/play.svg">`;
+			document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 			break;
 		case 3: // BUFFERING
 			if (dev_logs) {
 				console.log(`EVENT: BUFFERING`);
 			}
-			
-			document.getElementById('status').innerHTML = "Switching Song...";
-			document.getElementById('ticker').innerHTML = "";
+			if (document.getElementById('ticker').innerHTML.length < 1) {
+				document.getElementById('status').innerHTML = "Switching Song...";
+			}
 			break;
 		case 5: // CUED
 			if (dev_logs) {

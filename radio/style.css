@@ -146,8 +146,9 @@ html {
 	animation-timing-function: ease-in-out;*/
 }
 
-#controls {
+#control_panel {
 	background-color: rgba(0,0,0,0.5);
+	font-size: 1.25em;
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
@@ -155,6 +156,9 @@ html {
 	padding-bottom: 4px;
 	padding-left: 2px;
 	padding-right: 2px;
+}
+
+#controls {
 	/*flex: 0 1 auto;*/
 	display: flex;
 	align-items: center;
@@ -165,16 +169,126 @@ html {
 	bottom:0;*/
 }
 
+#controls_volume {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: auto;
+}
+
+#controls_playback {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#ticker_bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .control_button {
-	font-size: 1.2em;
-	padding: 2px 2px 2px 2px;
-	background-color: rgba(0,0,0,0.5);
+	margin-top: 1px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+	margin-right: 2px;
+	height: 32px;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0);
 	border: none;
 	color: #555555;
 }
+
+.control_button img {
+	zoom: 2;
+	image-rendering: pixelated;
+}
+
 .control_button:hover {
-	font-size: 1.2em;
-	background-color: rgba(100,100,100,0.5);
+	margin-top: 0px;
+	margin-bottom: 1px;
+	background-color: rgba(100,100,100,0);
+}
+
+.control_button:active {
+	margin-top: 1px;
+	margin-bottom: 0px;
+	background-color: rgba(100,100,100,0);
+}
+
+#control_mute_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -64px -16px;
+}
+
+#control_mute_img:hover {
+	background-position-y: -48px;
+}
+
+#control_voldown_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -80px -16px;
+}
+
+#control_voldown_img:hover {
+	background: url(./svg/spritesheet.png) -80px -48px;
+}
+
+#control_volup_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -96px -16px;
+}
+
+#control_volup_img:hover {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -96px -48px;
+}
+
+#control_rewind_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -32px 0px;
+}
+
+#control_rewind_img:hover {
+	background: url(./svg/spritesheet.png) -32px -32px;
+}
+
+#control_pause_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) 0px 0px;
+}
+
+#control_pause_img:hover {
+	background-position-y: -32px;
+}
+
+#control_skip_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -48px 0px;
+}
+
+#control_skip_img:hover {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -48px -32px;
+}
+
+#control_loop_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -64px 0px;
+}
+
+#control_loop_img:hover {
+	background-position-y: -32px;
 }
 
 .settings_button {
