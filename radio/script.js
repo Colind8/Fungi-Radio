@@ -6,7 +6,7 @@
 radio_data = {};
 save_data = localStorage.getItem("radio_data");
 radio_name = "Fungi Radio";
-radio_current = 0;
+radio_current = "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf";
 radio_shuffle = false;
 menu_open = false;
 dev_logs = false;
@@ -26,18 +26,20 @@ if (save_data) {
 } else {
 	console.log(`localStorage data not found! Loading...`);
 	dataobj = JSON.parse(`{
-	"version": 3,
+	"version": 4,
 	"extra_controls": false,
 	"devlogs": false,
 	"iframe": false,
 	"disabled_radios": [],
+	"disabled_radios_2k": [],
 	"secrets_found": [],
 	"image_rendering": 0,
 	"speed": 0,
 	"display_names": false,
 	"startup_pause": false,
 	"startup_volume": 100,
-	"startup_radio": 0
+	"startup_radio": "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
+	"startup_radio_2k": "fungiradio"
 }`);
 	begin_loading();
 }
@@ -114,6 +116,30 @@ function load() {
 			startup_pause: false,
 			startup_volume: 100,
 			startup_radio: 0
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
+	if (dataobj.version == 3) { // Update from version 3 to 4
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 3 to 4`);
+		}
+		let new_dataobj = {
+			version: 4,
+			extra_controls: dataobj.extra_controls,
+			devlogs: dataobj.devlogs,
+			iframe: dataobj.iframe,
+			disabled_radios: [],
+			disabled_radios_2k: [],
+			secrets_found: dataobj.secrets_found,
+			image_rendering: dataobj.image_rendering,
+			speed: dataobj.speed,
+			display_names: dataobj.display_names,
+			startup_pause: dataobj.startup_pause,
+			startup_volume: dataobj.startup_volume,
+			startup_radio: "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
+			startup_radio_2k: "fungiradio"
 		}
 		
 		dataobj = new_dataobj;
@@ -383,6 +409,7 @@ function switch_radio(qwer) {
 	document.getElementById('album_art')
 		.setAttribute("src", radio_data.radiolist[qwer].album);
 	radio_name = radio_data.radiolist[qwer].name;
+	
 	if (dev_logs) {
 		console.log(`LOADING RADIO: id ${radio_id}, name ${radio_name}`);
 	}
@@ -408,10 +435,16 @@ function reshuffle(ri) {
 
 function start() {
 	if (starting == false && started == false) {
-		document.getElementById("body").style.backgroundImage = `url("${radio_data.radiolist[dataobj.startup_radio].bg}")`;
-		document.getElementById("containerbg").style.backgroundImage = `url("${radio_data.radiolist[dataobj.startup_radio].bg}")`;
-		radio_current = dataobj.startup_radio;
-		switch_radio(dataobj.startup_radio);
+		for (i=0; i < radio_data.radiolist.length; i++) {
+			if (radio_data.radiolist[i].id == dataobj.startup_radio) {
+				radio_current = i;
+				break;
+			}
+		}
+		
+		document.getElementById("body").style.backgroundImage = `url("${radio_data.radiolist[radio_current].bg}")`;
+		document.getElementById("containerbg").style.backgroundImage = `url("${radio_data.radiolist[radio_current].bg}")`;
+		switch_radio(radio_current);
 		//console.log("Epic");
 		document.getElementById("startcontainer").style.animation = "start_fade 0.5s ease-in forwards"
 		setTimeout(start2, 500);
@@ -923,7 +956,7 @@ function generate_radiolist(r_data) {
 			if (r_data.radiolist[b].section == sections[a]) {
 				if ((r_data.radiolist[b].unlock_method != "secret") || (dataobj.secrets_found.includes(r_data.radiolist[b].unlock_password))) {
 					if (customizing_radiolist == false) {
-						if (dataobj.disabled_radios.includes(b) == false) {
+						if (dataobj.disabled_radios.includes(r_data.radiolist[b].id) == false) {
 							items_exist_in_section = true;
 							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" draggable="false" src="${r_data.radiolist[b].album}" onclick="radiolist_select(${b})" title="${r_data.radiolist[b].name}">`;
@@ -931,16 +964,16 @@ function generate_radiolist(r_data) {
 							r_string += `</div>`
 						}
 					} else {
-						if (dataobj.disabled_radios.includes(b) == false) {
+						if (dataobj.disabled_radios.includes(r_data.radiolist[b].id) == false) {
 							items_exist_in_section = true;
 							r_string += `<div class="radiolist_album_div">`
-							r_string += `<img class="radiolist_albums" id="album_${b}" style="filter: none;" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable(${b})" title="${r_data.radiolist[b].name}">`;
+							r_string += `<img class="radiolist_albums" id="album_${r_data.radiolist[b].id}" style="filter: none;" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable('${r_data.radiolist[b].id}')" title="${r_data.radiolist[b].name}">`;
 							r_string += `<div id="radio_name_${b}">${r_data.radiolist[b].name}</div>`
 							r_string += `</div>`
 						} else {
 							items_exist_in_section = true;
 							r_string += `<div class="radiolist_album_div">`
-							r_string += `<img class="radiolist_albums" id="album_${b}" style="filter: blur(5px);" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable(${b})" title="${r_data.radiolist[b].name}">`;
+							r_string += `<img class="radiolist_albums" id="album_${r_data.radiolist[b].id}" style="filter: blur(5px);" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable('${r_data.radiolist[b].id}')" title="${r_data.radiolist[b].name}">`;
 							r_string += `<div id="radio_name_${b}">${r_data.radiolist[b].name}</div>`
 							r_string += `</div>`
 						}
