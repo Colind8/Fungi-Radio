@@ -6,7 +6,7 @@
 radio_data = {};
 save_data = localStorage.getItem("radio_data");
 radio_name = "Fungi Radio";
-radio_current = "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf";
+radio_current = 0;
 radio_shuffle = false;
 menu_open = false;
 dev_logs = false;
@@ -167,7 +167,7 @@ function begin_loading() {
 		if (!save_data) {
 			for (var i = 0; i < radio_data.radiolist.length; i++) {
 				if (radio_data.radiolist[i].unlock_method == "toggle") {
-					dataobj.disabled_radios.push(i);
+					dataobj.disabled_radios.push(radio_data.radiolist[i].id);
 				}
 			}
 		}
