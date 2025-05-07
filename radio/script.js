@@ -207,6 +207,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) {
 	starting = false;
+	document.getElementById("startcontainer").style.cursor = "pointer";
 	let startstatuses = [
 		"Click anywhere to play!",
 		"Tune in!",
@@ -221,7 +222,18 @@ function onPlayerReady(event) {
 		"Also try Terrawars!",
 		"Kick it!",
 		"Let's rock!",
-		"Awwwwww yeaaaaaa!!!"
+		"Awwwwww yeaaaaaa!!!",
+		"Beautiful. Give it up, baby!",
+		"Why not both?",
+		"Are you in or out?",
+		"Ready!",
+		"You're tuning into FUNGI RADIO",
+		"I'm thinking miku miku ooweeoo I look just like buddy holly",
+		"Zero mistakes.",
+		"Aw jeez here comes (cue breakcore)",
+		"Get down! Get up again!",
+		"Don't stop the beat!",
+		"I know you sicker than sick-uh"
 	]
 	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
 	if (!dataobj.iframe) {
