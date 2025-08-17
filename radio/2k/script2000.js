@@ -147,11 +147,51 @@ function load() {
 		dataobj = new_dataobj;
 	}
 	
+	if (dataobj.version == 4) { // Update from version 4 to 5
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 4 to 5`);
+		}
+		let new_dataobj = {
+			version: 5,
+			bumpers_enabled: true,
+			controls: {
+				extra_controls: dataobj.extra_controls,
+				layout: 0,
+				controls_separate: true,
+				controls_size: 1,
+				consoles_visible: 0
+			},
+			dev: {
+				devlogs: dataobj.devlogs,
+				iframe: dataobj.iframe
+			},
+			radiolist: {
+				disabled_radios: dataobj.disabled_radios,
+				disabled_radios_2k: dataobj.disabled_radios_2k,
+				secrets_found: dataobj.secrets_found,
+				secrets_found_2k: dataobj.secrets_found_2k,
+				image_rendering: dataobj.image_rendering,
+				speed: dataobj.speed,
+				display_names: dataobj.display_names
+			},
+			startup: {
+				startup_pause: dataobj.startup_pause,
+				startup_volume: dataobj.startup_volume,
+				startup_radio: dataobj.startup_radio,
+				startup_radio_2k: dataobj.startup_radio,
+				saveprogress_enabled: false,
+				saveprogress_index: 0
+			}
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
 	begin_loading();
 }
 
 function begin_loading() {
-	if (dataobj.devlogs) {
+	if (dataobj.dev.devlogs) {
 		dev_logs = true;
 		console.log(`console logs enabled!`);
 	}
@@ -169,7 +209,7 @@ function begin_loading() {
 		if (!save_data) {
 			for (var i = 0; i < radio_data.radiolist.length; i++) {
 				if (radio_data.radiolist[i].unlock_method == "toggle") {
-					dataobj.disabled_radios_2k.push(radio_data.radiolist[i].file);
+					dataobj.radiolist.disabled_radios_2k.push(radio_data.radiolist[i].file);
 				}
 			}
 		}
@@ -231,14 +271,14 @@ function onPlayerReady(event) {
 		"I know you sicker than sick-uh"
 	]
 	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
-	if (!dataobj.iframe) {
+	if (!dataobj.dev.iframe) {
 		document.getElementById("player").style.display = "none";
 		document.getElementById("settingbutton_toggle_iframe").innerText = "Disabled";
 	} else {
 		document.getElementById("player").style.display = "inline";
 		document.getElementById("settingbutton_toggle_iframe").innerText = "Enabled";
 	}
-	if (!dataobj.extra_controls) {
+	if (!dataobj.controls.extra_controls) {
 		document.getElementById("control_rewind").style.display = "none";
 		document.getElementById("control_loop").style.display = "none";
 		document.getElementById("settingbutton_toggle_controls").innerText = "Disabled";
@@ -247,8 +287,8 @@ function onPlayerReady(event) {
 		document.getElementById("control_loop").style.display = "block";
 		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
 	}
-	document.getElementById(`form_volume`).value = dataobj.startup_volume;
-	volume_change(-100 + (Number(dataobj.startup_volume)) );
+	document.getElementById(`form_volume`).value = dataobj.startup.startup_volume;
+	volume_change(-100 + (Number(dataobj.startup.startup_volume)) );
 	setting_toggle_image_rendering(0);
 	setting_toggle_speed(0);
 	setting_toggle_radio_names(0);
@@ -401,7 +441,7 @@ function start_radio() {
 function start() {
 	if (starting == false && started == false) {
 		for (i=0; i < radio_data.radiolist.length; i++) {
-			if (radio_data.radiolist[i].file == dataobj.startup_radio_2k) {
+			if (radio_data.radiolist[i].file == dataobj.startup.startup_radio_2k) {
 				radio_current = i;
 				break;
 			}
@@ -547,7 +587,7 @@ function onPlayerStateChange(event) {
 				radio_shuffle = true;
 				player.playVideoAt(0);
 			}
-			if ((dataobj.startup_pause == true) && (radio_switched == true)) {
+			if ((dataobj.startup.startup_pause == true) && (radio_switched == true)) {
 				player.pauseVideo()
 				radio_switched = false;
 				document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
@@ -684,13 +724,13 @@ function open_settings(open_close) {
 }
 
 function setting_toggle_controls() {
-	if (dataobj.extra_controls) {
-		dataobj.extra_controls = false;
+	if (dataobj.controls.extra_controls) {
+		dataobj.controls.extra_controls = false;
 		document.getElementById("control_rewind").style.display = "none";
 		document.getElementById("control_loop").style.display = "none";
 		document.getElementById("settingbutton_toggle_controls").innerText = "Disabled";
 	} else {
-		dataobj.extra_controls = true;
+		dataobj.controls.extra_controls = true;
 		document.getElementById("control_rewind").style.display = "block";
 		document.getElementById("control_loop").style.display = "block";
 		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
@@ -698,12 +738,12 @@ function setting_toggle_controls() {
 }
 
 function setting_toggle_iframe() {
-	if (dataobj.iframe) {
-		dataobj.iframe = false;
+	if (dataobj.dev.iframe) {
+		dataobj.dev.iframe = false;
 		document.getElementById("player").style.display = "none";
 		document.getElementById("settingbutton_toggle_iframe").innerText = "Disabled";
 	} else {
-		dataobj.iframe = true;
+		dataobj.dev.iframe = true;
 		document.getElementById("player").style.display = "inline";
 		document.getElementById("settingbutton_toggle_iframe").innerText = "Enabled";
 	}
@@ -712,26 +752,26 @@ function setting_toggle_iframe() {
 function setting_toggle_logs() {
 	if (dev_logs) {
 		dev_logs = false;
-		dataobj.devlogs = false;
+		dataobj.dev.devlogs = false;
 		console.log(`console logs disabled!`);
 		document.getElementById("settingbutton_toggle_logs").innerText = "Disabled";
 	} else {
 		dev_logs = true;
-		dataobj.devlogs = true;
+		dataobj.dev.devlogs = true;
 		console.log(`console logs enabled!`);
 		document.getElementById("settingbutton_toggle_logs").innerText = "Enabled";
 	}
 }
 
 function setting_toggle_image_rendering(type) {
-	let image_renderer = dataobj.image_rendering;
+	let image_renderer = dataobj.radiolist.image_rendering;
 	if (type == -1) {
 		image_renderer++;
 		if (image_renderer > 3) {
 			image_renderer = 0;
 		}
 	}
-	dataobj.image_rendering = image_renderer;
+	dataobj.radiolist.image_rendering = image_renderer;
 	if (dev_logs) {
 		console.log(`Switching image-rendering to ${image_renderer}`);
 	}
@@ -756,14 +796,14 @@ function setting_toggle_image_rendering(type) {
 }
 
 function setting_toggle_speed(type) {
-	let animation_speed = dataobj.speed;
+	let animation_speed = dataobj.radiolist.speed;
 	if (type == -1) {
 		animation_speed++;
 		if (animation_speed > 6) {
 			animation_speed = 0;
 		}
 	}
-	dataobj.speed = animation_speed;
+	dataobj.radiolist.speed = animation_speed;
 	switch (animation_speed) {
 		case 0:
 			document.getElementById("settingbutton_toggle_speed").innerText = "Normal";
@@ -797,7 +837,7 @@ function setting_toggle_speed(type) {
 }
 
 function setting_toggle_startup_pause(type) {
-	let startup_pause = dataobj.startup_pause;
+	let startup_pause = dataobj.startup.startup_pause;
 	if (type == -1) {
 		if (startup_pause) {
 			startup_pause = false;
@@ -805,7 +845,7 @@ function setting_toggle_startup_pause(type) {
 			startup_pause = true;
 		}
 	}
-	dataobj.startup_pause = startup_pause;
+	dataobj.startup.startup_pause = startup_pause;
 	if (startup_pause) {
 		document.getElementById("setting_toggle_startup_pause").innerText = "Enabled";
 	} else {
@@ -814,7 +854,7 @@ function setting_toggle_startup_pause(type) {
 }
 
 function setting_toggle_radio_names(type) {
-	let toggle_radio_names = dataobj.display_names;
+	let toggle_radio_names = dataobj.radiolist.display_names;
 	if (type == -1) {
 		if (toggle_radio_names) {
 			toggle_radio_names = false;
@@ -822,7 +862,7 @@ function setting_toggle_radio_names(type) {
 			toggle_radio_names = true;
 		}
 	}
-	dataobj.display_names = toggle_radio_names;
+	dataobj.radiolist.display_names = toggle_radio_names;
 	switch (toggle_radio_names) {
 		case false:
 			document.getElementById("settingbutton_toggle_radio_names").innerText = "Disabled";
@@ -849,7 +889,7 @@ function setting_toggle_radio_names(type) {
 function set_start_volume() {
 	let start_volume = document.getElementById("form_volume").value;
 	
-	dataobj.startup_volume = start_volume;
+	dataobj.startup.startup_volume = start_volume;
 	return false;
 }
 
@@ -881,9 +921,9 @@ function generate_radiolist(r_data) {
 				console.log(`Reading radio ${b}...`);
 			}
 			if (r_data.radiolist[b].section == sections[a]) {
-				if ((r_data.radiolist[b].unlock_method != "secret") || (dataobj.secrets_found_2k.includes(r_data.radiolist[b].unlock_password))) {
+				if ((r_data.radiolist[b].unlock_method != "secret") || (dataobj.radiolist.secrets_found_2k.includes(r_data.radiolist[b].unlock_password))) {
 					if (customizing_radiolist == false) {
-						if (dataobj.disabled_radios_2k.includes(r_data.radiolist[b].file) == false) {
+						if (dataobj.radiolist.disabled_radios_2k.includes(r_data.radiolist[b].file) == false) {
 							items_exist_in_section = true;
 							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" draggable="false" src="${r_data.radiolist[b].album}" onclick="radiolist_select(${b})" title="${r_data.radiolist[b].name}">`;
@@ -891,7 +931,7 @@ function generate_radiolist(r_data) {
 							r_string += `</div>`
 						}
 					} else {
-						if (dataobj.disabled_radios_2k.includes(r_data.radiolist[b].file) == false) {
+						if (dataobj.radiolist.disabled_radios_2k.includes(r_data.radiolist[b].file) == false) {
 							items_exist_in_section = true;
 							r_string += `<div class="radiolist_album_div">`
 							r_string += `<img class="radiolist_albums" id="album_${r_data.radiolist[b].file}" style="filter: none;" draggable="false" src="${r_data.radiolist[b].album}" onclick="radio_disable('${r_data.radiolist[b].file}')" title="${r_data.radiolist[b].name}">`;
@@ -953,7 +993,7 @@ function setting_customize() {
 	
 	document.getElementById("radiolist").innerHTML = radiolist_string;
 	let radiolist_custom_albums = document.getElementsByClassName("radiolist_albums");
-	document.getElementById(`album_${dataobj.startup_radio_2k}`).style.border = "yellow 2px solid";
+	document.getElementById(`album_${dataobj.startup.startup_radio_2k}`).style.border = "yellow 2px solid";
 	open_settings(0);
 }
 
@@ -970,23 +1010,23 @@ function change_first_radio() {
 
 function radio_disable(id) {
 	if (selecting_first_radio == true) {
-		document.getElementById(`album_${dataobj.startup_radio_2k}`).style.border = "yellow 2px none";
-		dataobj.startup_radio_2k = id;
+		document.getElementById(`album_${dataobj.startup.startup_radio_2k}`).style.border = "yellow 2px none";
+		dataobj.startup.startup_radio_2k = id;
 		document.getElementById(`album_${id}`).style.border = "yellow 2px solid";
 		return;
 	}
 	
-	if (dataobj.disabled_radios_2k.includes(id)) {
+	if (dataobj.radiolist.disabled_radios_2k.includes(id)) {
 		if (dev_logs) {
 			console.log(`Enabling: ${id}`);
 		}
-		dataobj.disabled_radios_2k.splice(dataobj.disabled_radios_2k.indexOf(id),1);
+		dataobj.radiolist.disabled_radios_2k.splice(dataobj.radiolist.disabled_radios_2k.indexOf(id),1);
 		document.getElementById(`album_${id}`).style.filter = "none";
 	} else {
 		if (dev_logs) {
 			console.log(`Disabling: ${id}`);
 		}
-		dataobj.disabled_radios_2k.push(id);
+		dataobj.radiolist.disabled_radios_2k.push(id);
 		document.getElementById(`album_${id}`).style.filter = "blur(5px)";
 	}
 }
@@ -1009,7 +1049,7 @@ function run_code() {
 	let ran_code = document.getElementById("form_code").value;
 	let secret_found = false;
 	
-	if (dataobj.secrets_found_2k.includes(ran_code)) {
+	if (dataobj.radiolist.secrets_found_2k.includes(ran_code)) {
 		window.alert("You already found this secret!");
 		return false;
 	}
@@ -1023,7 +1063,7 @@ function run_code() {
 	}
 	
 	if (secret_found) {
-		dataobj.secrets_found_2k.push(ran_code);
+		dataobj.radiolist.secrets_found_2k.push(ran_code);
 		window.alert("Secret found!");
 		radiolist_string = "";
 		radiolist_string = generate_radiolist(radio_data);
