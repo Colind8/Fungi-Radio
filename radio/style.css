@@ -57,12 +57,30 @@ html {
 	}
 }
 
+@keyframes bg_fadeout_more {
+	from {
+		backdrop-filter: brightness(50%);
+	}
+	to {
+		backdrop-filter: brightness(10%);
+	}
+}
+
 @keyframes bg_fadein {
 	from {
 		backdrop-filter: brightness(50%);
 	}
 	to {
 		backdrop-filter: brightness(100%);
+	}
+}
+
+@keyframes bg_fadein_some {
+	from {
+		backdrop-filter: brightness(10%);
+	}
+	to {
+		backdrop-filter: brightness(50%);
 	}
 }
 
@@ -384,7 +402,6 @@ a:hover {
 }
 
 #settings_menu {
-	background-color: rgba(0,0,0,0.5);
 	display: none;
 }
 
@@ -400,4 +417,20 @@ a:hover {
 
 .extra_control {
 	display: none;
+}
+
+#settings_menu details {
+	background-color: #44444444;
+	max-width: 500px;
+	margin: auto;
+	margin-top: 2px;
+}
+
+#settings_menu details summary {
+	border: 2px #8a8a8a solid;
+	background-color: #6c6c6c7d;
+	cursor: pointer;
+	font-size: 1.5em;
+	text-align: left;
+	padding-left: 4px;
 }

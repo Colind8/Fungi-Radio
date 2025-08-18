@@ -178,7 +178,7 @@ function load() {
 				startup_pause: dataobj.startup_pause,
 				startup_volume: dataobj.startup_volume,
 				startup_radio: dataobj.startup_radio,
-				startup_radio_2k: dataobj.startup_radio,
+				startup_radio_2k: dataobj.startup_radio_2k,
 				saveprogress_enabled: false,
 				saveprogress_index: 0
 			}
@@ -688,10 +688,12 @@ function reset_background() {
 function open_settings(open_close) {
 	if (open_close == 0) {
 		document.getElementById("settings_menu").style.display = "none";
+		document.getElementById("body").style.animation = "bg_fadein_some 0.5s ease-in forwards";
 		document.getElementById("radiolist").style.display = "block";
 		radiolist_display();
 	} else {
 		document.getElementById("settings_menu").style.display = "block";
+		document.getElementById("body").style.animation = "bg_fadeout_more 0.5s ease-in forwards";
 		document.getElementById("radiolist").style.display = "none";
 	}
 	
@@ -936,24 +938,36 @@ function generate_radiolist(r_data) {
 
 function generate_settings() {
 	settings_string = "";
+	settings_string += `<details><summary>Controls</summary>`
 	settings_string += `<p>Toggle Extra Controls: <button onclick="setting_toggle_controls()" id="settingbutton_toggle_controls" class="settings_button">Disabled</button></p>`;
+	
+	settings_string += `</details><details><summary>Dev</summary>`
 	settings_string += `<p>Toggle iframe: <button onclick="setting_toggle_iframe()" id="settingbutton_toggle_iframe" class="settings_button">Disabled</button></p>`;
 	if (dev_logs) {
 		settings_string += `<p>Toggle console logs: <button onclick="setting_toggle_logs()" id="settingbutton_toggle_logs" class="settings_button">Enabled</button></p>`;
 	} else {
 		settings_string += `<p>Toggle console logs: <button onclick="setting_toggle_logs()" id="settingbutton_toggle_logs" class="settings_button">Disabled</button></p>`;
 	}
+	
+	settings_string += `</details><details><summary>Radiolist</summary>`
+	settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
 	settings_string += `<p>Image-rendering: <button onclick="setting_toggle_image_rendering(-1)" id="settingbutton_toggle_image_rendering" class="settings_button">???</button></p>`;
 	settings_string += `<p>Animation Speed: <button onclick="setting_toggle_speed(-1)" id="settingbutton_toggle_speed" class="settings_button">???</button></p>`;
 	settings_string += `<p>Radio Names: <button onclick="setting_toggle_radio_names(-1)" id="settingbutton_toggle_radio_names" class="settings_button">???</button></p>`;
+	
+	settings_string += `</details><details><summary>Startup</summary>`;
 	settings_string += `<p>Pause on Selecting Radio: <button onclick="setting_toggle_startup_pause(-1)" id="setting_toggle_startup_pause" class="settings_button">???</button></p>`;
 	settings_string += `<form onsubmit="return set_start_volume()"><label for="form_volume">Volume on Startup: </label><input autocomplete="off" type="number" min="0" max="100" id="form_volume" name="form_volume" value="100" class="form_input"></form>`;
 	
-	settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
+	settings_string += `</details><details><summary>Extra</summary>`;
 	settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input class="form_input" autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
+	
+	settings_string += `</details><details><summary>Data Management</summary>`;
+	settings_string += `<p><button class="settings_button" onclick="delete_save()">Delete LocalStorage data</button></p>`
+	
+	settings_string += `</details>`;
 	settings_string += `<p><button class="settings_button" onclick="open_settings(0)">Close Settings</button></p>`
 	settings_string += `<p><button class="settings_button" onclick="save()">Save settings to LocalStorage</button></p>`
-	settings_string += `<p><button class="settings_button" onclick="delete_save()">Delete LocalStorage data</button></p>`
 	return settings_string;
 }
 
