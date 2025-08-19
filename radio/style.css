@@ -424,6 +424,7 @@ a:hover {
 	max-width: 500px;
 	margin: auto;
 	margin-top: 2px;
+	padding-bottom: 1px;
 }
 
 #settings_menu details summary {
@@ -433,4 +434,9 @@ a:hover {
 	font-size: 1.5em;
 	text-align: left;
 	padding-left: 4px;
+}
+
+form {
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
