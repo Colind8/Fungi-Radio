@@ -419,7 +419,7 @@ a:hover {
 	display: none;
 }
 
-#settings_menu details {
+.settings_section {
 	background-color: #44444444;
 	max-width: 500px;
 	margin: auto;
@@ -427,7 +427,7 @@ a:hover {
 	padding-bottom: 1px;
 }
 
-#settings_menu details summary {
+.settings_section > summary {
 	border: 2px #8a8a8a solid;
 	background-color: #6c6c6c7d;
 	cursor: pointer;
