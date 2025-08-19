@@ -62,17 +62,24 @@ if (save_data) {
 	begin_loading();
 }
 
-function save() {
+function save(_alert) {
 	set_start_volume();
 	save_data = JSON.stringify(dataobj);
 	save_data = window.btoa(save_data);
 	localStorage.setItem("radio_data", save_data);
-	window.alert("Saved to LocalStorage!");
+	if (dev_logs) {
+		console.log("Saved to LocalStorage!");
+	}
+	if (_alert) {
+		window.alert("Saved to LocalStorage!");
+	}
+	
 }
 
 function delete_save() {
 	if (window.confirm("Are you sure you want to delete your LocalStorage data?")) {
 		localStorage.removeItem("radio_data");
+		localStorage.removeItem("radio_data_resume_progress");
 	}
 }
 
@@ -286,6 +293,7 @@ function onPlayerReady(event) {
 	setting_toggle_speed(0);
 	setting_toggle_radio_names(0);
 	setting_toggle_startup_pause(0);
+	setting_toggle_resume_progress(0);
 }
 
 /*
@@ -420,7 +428,16 @@ function switch_radio(qwer) {
 		console.log(`LOADING RADIO: id ${radio_id}, name ${radio_name}`);
 	}
 	
-	reshuffle();
+	if (dataobj.startup.saveprogress_enabled) {
+		if (dataobj.startup.startup_radio_2k == radio_id) {
+			load_resume_progress();
+		} else {
+			reshuffle();
+		}
+		
+	} else {
+		reshuffle();
+	}
 }
 
 function start_radio() {
@@ -462,6 +479,10 @@ function load_next_song() {
 		console.log(`Loading: ${radio_array[song_index]}`);
 	}
 	
+	if (dataobj.startup.saveprogress_enabled) {
+		save_resume_progress();
+	}
+	
 	if (radio_array.length > song_index) {
 		player.loadVideoById(radio_array[song_index]);
 	} else {
@@ -479,6 +500,11 @@ function load_previous_song() {
 		console.log(`QUEUE: ${song_index} / ${radio_array.length}`);
 		console.log(`Loading: ${radio_array[song_index]}`);
 	}
+	
+	if (dataobj.startup.saveprogress_enabled) {
+		save_resume_progress();
+	}
+	
 	if (radio_array.length > song_index) {
 		player.loadVideoById(radio_array[song_index]);
 	} else {
@@ -499,9 +525,14 @@ function reshuffle() {
 			radio_array[i] = radio_array[j];
 			radio_array[j] = k;
 		}
+		song_index = 0;
 		//radio_array.sort(function(){return 0.5 - Math.random()});
 		if (dev_logs) {
 			console.log(radio_array);
+		}
+		if (dataobj.startup.saveprogress_enabled) {
+			console.log('saving resume progress');
+			save_resume_progress();
 		}
 		start_radio();
 	});
@@ -540,6 +571,31 @@ function keycontrols(event) {
 			seek(5);
 			break;
 	}
+}
+
+function save_resume_progress() {
+	localStorage.setItem("radio_data_resume_progress", JSON.stringify(radio_array));
+	dataobj.startup.saveprogress_index = song_index;
+	dataobj.startup.startup_radio_2k = radio_id;
+	if (dev_logs) {
+		console.log("Saved resume progress to LocalStorage!");
+	}
+	save(false);
+}
+
+function load_resume_progress() {
+	if (dev_logs) {
+		console.log("LOADING RESUME PROGRESS...");
+	}
+	
+	radio_array = JSON.parse(localStorage.getItem("radio_data_resume_progress"));
+	song_index = dataobj.startup.saveprogress_index;
+	if (dev_logs) {
+		console.log(radio_array);
+		console.log(`resume index: ${song_index}`);
+	}
+	
+	start_radio();
 }
 
 
@@ -848,6 +904,25 @@ function setting_toggle_startup_pause(type) {
 	}
 }
 
+function setting_toggle_resume_progress(type) {
+	let startup_pause = dataobj.startup.startup_pause;
+	if (type == -1) {
+		if (dataobj.startup.saveprogress_enabled) {
+			dataobj.startup.saveprogress_enabled = false;
+			localStorage.removeItem("radio_data_resume_progress");
+			save(false);
+		} else {
+			dataobj.startup.saveprogress_enabled = true;
+			save_resume_progress();
+		}
+	}
+	if (dataobj.startup.saveprogress_enabled) {
+		document.getElementById("setting_toggle_resume_progress").innerText = "Enabled";
+	} else {
+		document.getElementById("setting_toggle_resume_progress").innerText = "Disabled";
+	}
+}
+
 function setting_toggle_radio_names(type) {
 	let toggle_radio_names = dataobj.radiolist.display_names;
 	if (type == -1) {
@@ -988,7 +1063,7 @@ function generate_settings() {
 	
 	settings_string += `</details>`;
 	settings_string += `<p><button class="settings_button" onclick="open_settings(0)">Close Settings</button></p>`
-	settings_string += `<p><button class="settings_button" onclick="save()">Save settings to LocalStorage</button></p>`
+	settings_string += `<p><button class="settings_button" onclick="save(true)">Save settings to LocalStorage</button></p>`
 	return settings_string;
 }
 
