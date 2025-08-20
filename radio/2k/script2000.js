@@ -19,6 +19,7 @@ radiolist_speed = 0.05;
 const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
 ticker_id = 0;
 song_index = 0;
+rewind_state = true;
 
 if (save_data) {
 	console.log(`localStorage data found! Loading...`);
@@ -367,7 +368,7 @@ function skip() {
 }
 
 function rewind() {
-	if (player.getCurrentTime() > 5) {
+	if (rewind_state == true) {
 		if (dev_logs) {
 			console.log(`Restarting song...`);
 		}
@@ -378,6 +379,21 @@ function rewind() {
 		}
 		load_previous_song();
 	}
+	
+	rewind_count_start();
+}
+
+function rewind_count_start() {
+	rewind_state = false;
+	if (typeof rewind_timer !== 'undefined') {
+		clearTimeout(rewind_timer);
+	}
+	rewind_timer = setTimeout(rewind_count, 5*1000);
+}
+
+
+function rewind_count() {
+	rewind_state = true;
 }
 
 function toggle_loop() {
@@ -438,6 +454,8 @@ function switch_radio(qwer) {
 	} else {
 		reshuffle();
 	}
+	
+	rewind_count_start();
 }
 
 function start_radio() {
@@ -488,6 +506,8 @@ function load_next_song() {
 	} else {
 		reshuffle()
 	}
+	
+	rewind_count_start();
 }
 
 function load_previous_song() {
