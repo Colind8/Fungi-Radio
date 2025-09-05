@@ -452,13 +452,22 @@
 			"bg": "https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/632360/ss_dc777b5c583794c99440b196cd1d26884fb1720b.jpg"
 		},
 		{
-			"id": "PLpJl5XaLHtLX-pDk4kctGxtF4nq6BIyjg",
+			"id": "PLKXdyINOQYsb38jn5HGiF6w8X3rph4IIx",
 			"name": "Undertale Radio",
 			"section": "Soundtracks",
 			"unlock_method": "secret",
 			"unlock_password": "gamer",
 			"album": "https://i.imgur.com/KI8ikmx.png",
 			"bg": "https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/items/391540/5ffb612a2f3ad0f7c2e7ac2ca3e75246e8f013ca.jpg"
+		},
+		{
+			"id": "PLwjEXrvFo-2B7iCX61eOThc_oGihi84l9",
+			"name": "Deltarune Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/Ou7jN4q.png",
+			"bg": "https://i.imgur.com/L8Z6vDl.png"
 		},
 		{
 			"id": "PLZPK9tzp-98d-T4YFtbuvaF8W6IgkuwW4",
@@ -630,6 +639,15 @@
 			"unlock_password": "gamer",
 			"album": "https://cdn2.steamgriddb.com/icon_thumb/218a0aefd1d1a4be65601cc6ddc1520e.png",
 			"bg": "https://images8.alphacoders.com/888/888559.jpg"
+		},
+		{
+			"id": "PLGgeOJev8QMQOrzg9bY4KcwN9d02PG71A",
+			"name": "Electric Terraria",
+			"section": "Secret",
+			"unlock_method": "secret",
+			"unlock_password": "electric",
+			"album": "https://images.steamusercontent.com/ugc/1733304487220289741/55369E746041A0BDD4092CD54789A006A4D92349/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false",
+			"bg": "https://i.imgur.com/j3fLLSx.png"
 		}
 	],
 	"misc": {
