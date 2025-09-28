@@ -14,6 +14,7 @@ started = false;
 starting = true;
 loop_enabled = false;
 loop_wait = false;
+was_rewinding = false;
 customizing_radiolist = false;
 radiolist_speed = 0.05;
 const radiolist_albums = document.getElementsByClassName("radiolist_album_div");
@@ -366,6 +367,8 @@ function skip() {
 	if (dev_logs) {
 		console.log(`Skipping: ${player.getPlaylist().length} > ${player.getPlaylistIndex() + 1}\n${player.getPlaylist().length > (player.getPlaylistIndex() + 1)}`);
 	}
+	loop_wait = false;
+	was_rewinding = false;
 	if (player.getPlaylist().length > (player.getPlaylistIndex() + 1)) {
 		player.nextVideo();
 	} else {
@@ -374,6 +377,8 @@ function skip() {
 }
 
 function rewind() {
+	loop_wait = false;
+	was_rewinding = true;
 	player.previousVideo();
 }
 
@@ -399,7 +404,17 @@ function onError(event) {
 		if (dev_logs) {
 			console.log("ERROR: SKIPPING");
 		}
-		skip();
+		if (was_rewinding == true) {
+			if (player.getPlaylistIndex() == 0) {
+				skip();
+			} else {
+				rewind();
+			}
+			
+		} else {
+			skip();
+		}
+		
 	} else {
 		if (dev_logs) {
 			console.log("ERROR: RESHUFFLING")
@@ -413,6 +428,7 @@ function switch_radio(qwer) {
 	if (dev_logs) {
 		console.log(`SWITCH RADIO: ${qwer}`);
 	}
+	was_rewinding = false;
 	player.mute();
 	unmutein = 0;
 	document.getElementById('status').innerHTML = "Loading...";

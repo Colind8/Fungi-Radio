@@ -364,6 +364,7 @@ function skip() {
 	if (dev_logs) {
 		console.log(`Skipping...`);
 	}
+	loop_wait = false;
 	load_next_song();
 }
 
@@ -377,6 +378,7 @@ function rewind() {
 		if (dev_logs) {
 			console.log(`Rewinding...`);
 		}
+		loop_wait = false;
 		load_previous_song();
 	}
 	
@@ -429,6 +431,7 @@ function switch_radio(qwer) {
 		console.log(`SWITCH RADIO: ${qwer}`);
 	}
 	//player.mute();
+	loop_wait = false;
 	radio_switched = true;
 	document.getElementById('status').innerHTML = "Loading...";
 	player.stopVideo();
@@ -631,10 +634,7 @@ function onPlayerStateChange(event) {
 			if (dev_logs) {
 				console.log(`EVENT: UNSTARTED`);
 			}
-			if ((loop_enabled == true) && (loop_wait == true)) {
-				rewind();
-				loop_wait = false;
-			}
+			
 			document.getElementById('status').innerHTML = "Switching Song...";
 			document.getElementById('ticker').innerHTML = "";
 			break;
@@ -643,7 +643,14 @@ function onPlayerStateChange(event) {
 				console.log(`EVENT: ENDED`);
 			}
 			
-			load_next_song();
+			if ((loop_enabled == true) && (loop_wait == true)) {
+				loop_wait = false;
+				song_index++;
+				load_previous_song();
+			} else {
+				load_next_song();
+			}
+			
 			break;
 		case 1: //PLAYING
 			if (dev_logs) {
