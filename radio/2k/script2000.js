@@ -33,7 +33,8 @@ if (save_data) {
 			layout: 0,
 			controls_separate: true,
 			controls_size: 1,
-			consoles_visible: 0
+			consoles_visible: 0,
+			hyperlink_pause: true
 		},
 		dev: {
 			devlogs: false,
@@ -214,6 +215,49 @@ function load() {
 		dataobj = new_dataobj;
 	}
 	
+	if (dataobj.version == 5) { // Update from version 5 to 6
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 5 to 6`);
+		}
+		let new_dataobj = {
+			version: 6,
+			controls: {
+				extra_controls: dataobj.controls,
+				layout: dataobj.controls.layout,
+				controls_separate: dataobj.controls.separate,
+				controls_size: dataobj.controls.controls_size,
+				consoles_visible: dataobj.controls.controls_visible,
+				hyperlink_pause: true
+			},
+			dev: {
+				devlogs: dataobj.dev.devlogs,
+				iframe: dataobj.dev.iframe
+			},
+			radiolist: {
+				disabled_radios: dataobj.radiolist.disabled_radios,
+				disabled_radios_2k: dataobj.radiolist.disabled_radios_2k,
+				secrets_found: dataobj.radiolist.secrets_found,
+				secrets_found_2k: dataobj.radiolist.secrets_found_2k,
+				image_rendering: dataobj.radiolist.image_rendering,
+				speed: dataobj.radiolist.speed,
+				display_names: dataobj.radiolist.display_names
+			},
+			startup: {
+				startup_pause: dataobj.startup.startup_pause,
+				startup_volume: dataobj.startup.startup_volume,
+				startup_radio: dataobj.startup.startup_radio,
+				startup_radio_2k: dataobj.startup.startup_radio_2k,
+				saveprogress_enabled: dataobj.startup.saveprogress_enabled,
+				saveprogress_index: dataobj.startup.saveprogress_index
+			},
+			extra: {
+				bumpers_enabled: dataobj.extra.bumpers_enabled
+			}
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
 	begin_loading();
 }
 
@@ -295,6 +339,7 @@ function onPlayerReady(event) {
 	setting_toggle_radio_names(0);
 	setting_toggle_startup_pause(0);
 	setting_toggle_resume_progress(0);
+	setting_toggle_hyperlink(0);
 }
 
 /*
@@ -358,6 +403,12 @@ function pause() {
 		document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 	}
 
+}
+
+function hyperlink_clicked(){
+	if (dataobj.controls.hyperlink_pause) {
+		pause();
+	}
 }
 
 function skip() {
@@ -669,7 +720,7 @@ function onPlayerStateChange(event) {
 				document.getElementById("control_pause_img").style.backgroundPositionX = `-16px`;
 			}
 			if (document.getElementById('ticker').innerHTML.length < 1) {
-				document.getElementById('ticker').innerHTML = `<a href="${player.getVideoUrl()}" target="_blank" onclick="pause()">${document.getElementById('player').title}</a> - ${radio_name}`;
+				document.getElementById('ticker').innerHTML = `<a href="${player.getVideoUrl()}" target="_blank" onclick="hyperlink_clicked()">${document.getElementById('player').title}</a> - ${radio_name}`;
 			}
 			loop_wait = true;
 			ticker_scroll_start();
@@ -983,6 +1034,23 @@ function setting_toggle_radio_names(type) {
 	}
 }
 
+function setting_toggle_hyperlink(type) {
+	let hyperlink_pause = dataobj.controls.hyperlink_pause;
+	if (type == -1) {
+		if (hyperlink_pause) {
+			hyperlink_pause = false;
+		} else {
+			hyperlink_pause = true;
+		}
+	}
+	dataobj.controls.hyperlink_pause = hyperlink_pause;
+	if (hyperlink_pause) {
+		document.getElementById("settingbutton_toggle_hyperlink").innerText = "Enabled";
+	} else {
+		document.getElementById("settingbutton_toggle_hyperlink").innerText = "Disabled";
+	}
+}
+
 function set_start_volume() {
 	let start_volume = document.getElementById("form_volume").value;
 	
@@ -1061,6 +1129,7 @@ function generate_settings() {
 	settings_string = "";
 	settings_string += `<details class="settings_section"><summary>Controls</summary>`
 	settings_string += `<p>Toggle Extra Controls: <button onclick="setting_toggle_controls()" id="settingbutton_toggle_controls" class="settings_button">Disabled</button></p>`;
+	settings_string += `<p>Pause on hyperlink: <button onclick="setting_toggle_hyperlink(-1)" id="settingbutton_toggle_hyperlink" class="settings_button">Enabled</button></p>`;
 	
 	settings_string += `</details><details class="settings_section"><summary>Dev</summary>`
 	settings_string += `<p>Toggle iframe: <button onclick="setting_toggle_iframe()" id="settingbutton_toggle_iframe" class="settings_button">Disabled</button></p>`;
