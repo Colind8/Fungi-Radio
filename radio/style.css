@@ -130,7 +130,8 @@ html {
 	height: 100%;
 	width: 100%;
 	position: absolute;
-	background-color: black;
+	background-color: #14001c;
+	color: #ff7800;
 	z-index: 20;
 	opacity: 1;
 	background-repeat: no-repeat;
