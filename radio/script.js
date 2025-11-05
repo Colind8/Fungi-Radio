@@ -515,14 +515,12 @@ function reshuffle(ri) {
 
 function start() {
 	if (starting == false && started == false) {
-		// TEMPORARILY DISABLED FOR HALLOWEEN!!!
-		/*for (i=0; i < radio_data.radiolist.length; i++) {
+		for (i=0; i < radio_data.radiolist.length; i++) {
 			if (radio_data.radiolist[i].id == dataobj.startup.startup_radio) {
 				radio_current = i;
 				break;
 			}
-		}*/
-		radio_current = 0;
+		}
 		
 		document.getElementById("body").style.backgroundImage = `url("${radio_data.radiolist[radio_current].bg}")`;
 		document.getElementById("containerbg").style.backgroundImage = `url("${radio_data.radiolist[radio_current].bg}")`;

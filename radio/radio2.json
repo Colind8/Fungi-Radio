@@ -1,15 +1,6 @@
 {
 	"radiolist": [
 		{
-			"id": "PLGgeOJev8QMSvXsa5P4MfRKHgJVwicxZj",
-			"name": "Halloween Radio",
-			"section": "Holiday",
-			"unlock_method": "default",
-			"unlock_password": "NA",
-			"album": "https://i.imgur.com/BdrTi4K.png",
-			"bg": "https://i.imgur.com/MqO6pEC.png"
-		},
-		{
 			"id": "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
 			"name": "Fungi Radio",
 			"section": "Main",
@@ -665,28 +656,59 @@
 			"unlock_password": "punk",
 			"album": "https://i.imgur.com/ueB23Al.png",
 			"bg": "https://i.imgur.com/0JpgveM.png"
+		},
+		{
+			"id": "PLGgeOJev8QMSvXsa5P4MfRKHgJVwicxZj",
+			"name": "Halloween Radio",
+			"section": "Holiday",
+			"unlock_method": "toggle",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/BdrTi4K.png",
+			"bg": "https://i.imgur.com/MqO6pEC.png"
 		}
 	],
 	"misc": {
 		"splashtext": [
-			"BOO!",
-			"Trick-or-Treat!",
-			"Rocker beware, you're in for a scare!",
-			"Submitted for the approval of The Place, I call this song...",
-			"Like Zoinks!",
-			"This is Halloween!",
-			"IT IS THE SPOOKY MONTH!!!",
-			"The Candy Man can... and will!",
-			"Jeepers!",
-			"Jinkies!",
-			"Ruh-roh!",
-			"Happy Halloween!",
-			"Muhuhahahaha!!!",
-			"Ghostly haunting I turn loose!",
-			"Dear all trick-or-treaters...",
-			"oooOOooOOoOooooOo spooky",
-			"Seal your doom tonight!",
-			"Do you like scary songs?"
+			"Click anywhere to play!",
+			"Tune in!",
+			"Turn on!",
+			"Rock on!",
+			"Who's gonna rock the place?",
+			"We're forever gonna rock the place.",
+			"(place, place)",
+			"Tune in, turn on",
+			"We're going all city!",
+			"Won't you take me to Funkytown?",
+			"Also try Terrawars!",
+			"Kick it!",
+			"Let's rock!",
+			"Awwwwww yeaaaaaa!!!",
+			"Beautiful. Give it up, baby!",
+			"Why not both?",
+			"Are you in or out?",
+			"Ready!",
+			"You're tuning into FUNGI RADIO",
+			"I'm thinking miku miku ooweeoo I look just like buddy holly",
+			"Zero mistakes.",
+			"Aw jeez here comes (cue breakcore)",
+			"Get down! Get up again!",
+			"Don't stop the beat!",
+			"I know you sicker than sick-uh",
+			"Keep on running...",
+			"I don't know when I'm supposed to stop!",
+			"check out tartdeliciousstatistic",
+			"It's time.",
+			"A trick with a twist??",
+			"Dance, Baby!",
+			"Let's get it started!",
+			"Ready when you are.",
+			"The scratch, the bass, the congos in yo face",
+			"Fly away!",
+			"I feel indisputable.",
+			"Come along with me.",
+			"I'm smoking the track!",
+			"Man, it is a HOT one today.",
+			"It's been so long"
 		]
 	}
 }
