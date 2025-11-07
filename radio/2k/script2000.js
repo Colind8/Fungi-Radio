@@ -644,6 +644,19 @@ function keycontrols(event) {
 		case "ArrowRight":
 			seek(5);
 			break;
+		case "a":
+			if (menu_open) {
+				radiolist_select(radio_current)
+			} else {
+				radiolist_openup();
+			}
+			break;
+		case "s":
+			if (!menu_open) {
+				radiolist_openup();
+			}
+			open_settings(1);
+			break;
 	}
 }
 
