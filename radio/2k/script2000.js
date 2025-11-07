@@ -294,7 +294,6 @@ function begin_loading() {
 		radiolist_string += `<p>Created by <a target="_blank" href="https://colind8.neocities.org/">Colind8</a></p>`
 
 		document.getElementById("radiolist").innerHTML = radiolist_string;
-		document.getElementById("settings_menu").innerHTML += generate_settings();
 	});
 }
 
@@ -318,19 +317,24 @@ function onPlayerReady(event) {
 	document.getElementById("startstatus").innerHTML = startstatuses[Math.round(Math.random() * (startstatuses.length - 1))];
 	if (!dataobj.dev.iframe) {
 		document.getElementById("player").style.display = "none";
-		document.getElementById("settingbutton_toggle_iframe").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_iframe").className = "setting_disabled_img";
 	} else {
 		document.getElementById("player").style.display = "inline";
-		document.getElementById("settingbutton_toggle_iframe").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_iframe").className = "setting_enabled_img";
 	}
 	if (!dataobj.controls.extra_controls) {
 		document.getElementById("control_rewind").style.display = "none";
 		document.getElementById("control_loop").style.display = "none";
-		document.getElementById("settingbutton_toggle_controls").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_controls").className = "setting_disabled_img";
 	} else {
 		document.getElementById("control_rewind").style.display = "block";
 		document.getElementById("control_loop").style.display = "block";
-		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_controls").className = "setting_enabled_img";
+	}
+	if (dev_logs) {
+		document.getElementById("settingbutton_toggle_logs").className = "setting_enabled_img";
+	} else {
+		document.getElementById("settingbutton_toggle_logs").className = "setting_disabled_img";
 	}
 	document.getElementById(`form_volume`).value = dataobj.startup.startup_volume;
 	volume_change(-100 + (Number(dataobj.startup.startup_volume)) );
@@ -870,12 +874,12 @@ function setting_toggle_controls() {
 		dataobj.controls.extra_controls = false;
 		document.getElementById("control_rewind").style.display = "none";
 		document.getElementById("control_loop").style.display = "none";
-		document.getElementById("settingbutton_toggle_controls").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_controls").className = "setting_disabled_img";
 	} else {
 		dataobj.controls.extra_controls = true;
 		document.getElementById("control_rewind").style.display = "block";
 		document.getElementById("control_loop").style.display = "block";
-		document.getElementById("settingbutton_toggle_controls").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_controls").className = "setting_enabled_img";
 	}
 }
 
@@ -883,11 +887,11 @@ function setting_toggle_iframe() {
 	if (dataobj.dev.iframe) {
 		dataobj.dev.iframe = false;
 		document.getElementById("player").style.display = "none";
-		document.getElementById("settingbutton_toggle_iframe").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_iframe").className = "setting_disabled_img";
 	} else {
 		dataobj.dev.iframe = true;
 		document.getElementById("player").style.display = "inline";
-		document.getElementById("settingbutton_toggle_iframe").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_iframe").className = "setting_enabled_img";
 	}
 }
 
@@ -896,12 +900,12 @@ function setting_toggle_logs() {
 		dev_logs = false;
 		dataobj.dev.devlogs = false;
 		console.log(`console logs disabled!`);
-		document.getElementById("settingbutton_toggle_logs").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_logs").className = "setting_disabled_img";
 	} else {
 		dev_logs = true;
 		dataobj.dev.devlogs = true;
 		console.log(`console logs enabled!`);
-		document.getElementById("settingbutton_toggle_logs").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_logs").className = "setting_enabled_img";
 	}
 }
 
@@ -989,9 +993,9 @@ function setting_toggle_startup_pause(type) {
 	}
 	dataobj.startup.startup_pause = startup_pause;
 	if (startup_pause) {
-		document.getElementById("setting_toggle_startup_pause").innerText = "Enabled";
+		document.getElementById("setting_toggle_startup_pause").className = "setting_enabled_img";
 	} else {
-		document.getElementById("setting_toggle_startup_pause").innerText = "Disabled";
+		document.getElementById("setting_toggle_startup_pause").className = "setting_disabled_img";
 	}
 }
 
@@ -1008,9 +1012,9 @@ function setting_toggle_resume_progress(type) {
 		}
 	}
 	if (dataobj.startup.saveprogress_enabled) {
-		document.getElementById("setting_toggle_resume_progress").innerText = "Enabled";
+		document.getElementById("setting_toggle_resume_progress").className = "setting_enabled_img";
 	} else {
-		document.getElementById("setting_toggle_resume_progress").innerText = "Disabled";
+		document.getElementById("setting_toggle_resume_progress").className = "setting_disabled_img";
 	}
 }
 
@@ -1026,7 +1030,7 @@ function setting_toggle_radio_names(type) {
 	dataobj.radiolist.display_names = toggle_radio_names;
 	switch (toggle_radio_names) {
 		case false:
-			document.getElementById("settingbutton_toggle_radio_names").innerText = "Disabled";
+			document.getElementById("settingbutton_toggle_radio_names").className = "setting_disabled_img";
 			for (i=0; i < radio_data.radiolist.length; i++) {
 				if (document.getElementById(`radio_name_${i}`)) {
 					document.getElementById(`radio_name_${i}`).style.display = "none";
@@ -1035,7 +1039,7 @@ function setting_toggle_radio_names(type) {
 			}
 			break;
 		case true:
-			document.getElementById("settingbutton_toggle_radio_names").innerText = "Enabled";
+			document.getElementById("settingbutton_toggle_radio_names").className = "setting_enabled_img";
 			for (i=0; i < radio_data.radiolist.length; i++) {
 				if (document.getElementById(`radio_name_${i}`)) {
 					document.getElementById(`radio_name_${i}`).style.display = "block";
@@ -1058,9 +1062,9 @@ function setting_toggle_hyperlink(type) {
 	}
 	dataobj.controls.hyperlink_pause = hyperlink_pause;
 	if (hyperlink_pause) {
-		document.getElementById("settingbutton_toggle_hyperlink").innerText = "Enabled";
+		document.getElementById("settingbutton_toggle_hyperlink").className = "setting_enabled_img";
 	} else {
-		document.getElementById("settingbutton_toggle_hyperlink").innerText = "Disabled";
+		document.getElementById("settingbutton_toggle_hyperlink").className = "setting_disabled_img";
 	}
 }
 
@@ -1136,44 +1140,6 @@ function generate_radiolist(r_data) {
 	}
 	
 	return r_string;
-}
-
-function generate_settings() {
-	settings_string = "";
-	settings_string += `<details class="settings_section"><summary>Controls</summary>`
-	settings_string += `<p>Toggle Extra Controls: <button onclick="setting_toggle_controls()" id="settingbutton_toggle_controls" class="settings_button">Disabled</button></p>`;
-	settings_string += `<p>Pause on hyperlink: <button onclick="setting_toggle_hyperlink(-1)" id="settingbutton_toggle_hyperlink" class="settings_button">Enabled</button></p>`;
-	
-	settings_string += `</details><details class="settings_section"><summary>Dev</summary>`
-	settings_string += `<p>Toggle iframe: <button onclick="setting_toggle_iframe()" id="settingbutton_toggle_iframe" class="settings_button">Disabled</button></p>`;
-	if (dev_logs) {
-		settings_string += `<p>Toggle console logs: <button onclick="setting_toggle_logs()" id="settingbutton_toggle_logs" class="settings_button">Enabled</button></p>`;
-	} else {
-		settings_string += `<p>Toggle console logs: <button onclick="setting_toggle_logs()" id="settingbutton_toggle_logs" class="settings_button">Disabled</button></p>`;
-	}
-	
-	settings_string += `</details><details class="settings_section"><summary>Radiolist</summary>`
-	settings_string += `<p>Customize Radiolist: <button onclick="setting_customize()" class="settings_button">Customize Radiolist</button></p>`;
-	settings_string += `<p>Image-rendering: <button onclick="setting_toggle_image_rendering(-1)" id="settingbutton_toggle_image_rendering" class="settings_button">???</button></p>`;
-	settings_string += `<p>Animation Speed: <button onclick="setting_toggle_speed(-1)" id="settingbutton_toggle_speed" class="settings_button">???</button></p>`;
-	settings_string += `<p>Radio Names: <button onclick="setting_toggle_radio_names(-1)" id="settingbutton_toggle_radio_names" class="settings_button">???</button></p>`;
-	
-	settings_string += `</details><details class="settings_section"><summary>Startup</summary>`;
-	settings_string += `<p>Pause on Selecting Radio: <button onclick="setting_toggle_startup_pause(-1)" id="setting_toggle_startup_pause" class="settings_button">???</button></p>`;
-	settings_string += `<form onsubmit="return set_start_volume()"><label for="form_volume">Volume on Startup: </label><input autocomplete="off" type="number" min="0" max="100" id="form_volume" name="form_volume" value="100" class="form_input"></form>`;
-	
-	settings_string += `</details><details class="settings_section"><summary>Extra</summary>`;
-	settings_string += `<form onsubmit="return run_code()"><label for="form_code">Code: </label><input class="form_input" autocomplete="off" type="text" id="form_code" name="form_code" value=""><input type="submit" class="settings_button" value="Submit"></form>`;
-	settings_string += `<p title="">Fungi Radio 2000 Resume Progress: <button onclick="setting_toggle_resume_progress(-1)" id="setting_toggle_resume_progress" class="settings_button">Disabled</button></p>`
-	settings_string += `<details><summary>What is that?</summary><p>The Fungi Radio 2000 Resume Progress allows you to resume a playlist when reopening Fungi Radio 2000. Every time you finish a song, it'll save your progress to LocalStorage. If you switch to another radio, your progress will be destroyed and the new radio will take its place.</p></details>`
-	
-	settings_string += `</details><details class="settings_section"><summary>Data Management</summary>`;
-	settings_string += `<p><button class="settings_button" onclick="delete_save()">Delete LocalStorage data</button></p>`
-	
-	settings_string += `</details>`;
-	settings_string += `<p><button class="settings_button" onclick="open_settings(0)">Close Settings</button></p>`
-	settings_string += `<p><button class="settings_button" onclick="save(true)">Save settings to LocalStorage</button></p>`
-	return settings_string;
 }
 
 function setting_customize() {

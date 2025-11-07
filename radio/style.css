@@ -309,11 +309,55 @@ html {
 	background-position-y: -32px;
 }
 
+.setting_disabled_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) 0px -64px;
+	zoom: 2;
+	image-rendering: pixelated;
+	cursor: pointer;
+}
+
+.setting_disabled_img:hover {
+	width: 16px;
+	height: 16px;
+	background-position-x: -16px;
+	zoom: 2;
+	image-rendering: pixelated;
+	cursor: pointer;
+}
+
+.setting_enabled_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -32px -64px;
+	zoom: 2;
+	image-rendering: pixelated;
+	cursor: pointer;
+}
+
+.setting_test_img {
+	width: 16px;
+	height: 16px;
+	background: url(./svg/spritesheet.png) -64px -64px;
+	zoom: 2;
+}
+
+.setting_enabled_img:hover {
+	width: 16px;
+	height: 16px;
+	background-position-x: -48px;
+	zoom: 2;
+	image-rendering: pixelated;
+	cursor: pointer;
+}
+
 .settings_button {
 	padding: 2px 2px 2px 2px;
 	background-color: rgba(75,75,75,0.5);
 	border: none;
 	color: #dddddd;
+	cursor: pointer;
 }
 
 .settings_button:hover {
@@ -368,6 +412,8 @@ html {
 	display: inline-block;
 	margin: 0.1em;
 	transform: scaleY(0);
+	cursor: pointer;
+	
 }
 
 /* width */
@@ -439,4 +485,16 @@ a:hover {
 form {
 	margin-top: 16px;
 	margin-bottom: 16px;
+}
+
+table {
+	margin-left: 20%;
+	margin-right: auto;	
+	margin-top: 16px;
+}
+
+td {
+	text-align: left;
+	padding-right: 20px;
+	padding-bottom: 16px;
 }
