@@ -526,10 +526,14 @@ function start_radio() {
 
 function start() {
 	if (starting == false && started == false) {
-		for (i=0; i < radio_data.radiolist.length; i++) {
-			if (radio_data.radiolist[i].file == dataobj.startup.startup_radio_2k) {
-				radio_current = i;
-				break;
+		if (Number.isNaN(parseInt(location.hash.slice(1))) == false) {
+			radio_current = parseInt(location.hash.slice(1));
+		} else {
+			for (i=0; i < radio_data.radiolist.length; i++) {
+				if (radio_data.radiolist[i].file == dataobj.startup.startup_radio_2k) {
+					radio_current = i;
+					break;
+				}
 			}
 		}
 		
