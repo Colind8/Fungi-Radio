@@ -712,6 +712,46 @@
 			"Rannygazoo, let's have a tune!",
 			"Hey! Wanna listen to some tunes?"
 		]
-		
+	},
+	"events": [
+		{
+			"name": "Christmas",
+			"start_date": "12/1",
+			"end_date": "12/31",
+			"radio_id": 33,
+			"color_bg": "#023e00",
+			"color_fg": "#ff2b2b",
+			"splash_text": [
+				"Merry Christmas!",
+				"Happy Holidays!",
+				"It's the most wonderful time!",
+				"Time to jingle bell ROCK!!!",
+				"Let it snow!",
+				"ho ho ho!",
+				"It's time!",
+				"Is that a giant sack!?",
+				"You're so easy to distract!",
+				"Ladies and Gentleman, Jesus Christ on the Electric Guitar!",
+				"I'll let it ruin my life, making it the best Christmas, yet!",
+				"You better watch out!",
+				"You better not cry!",
+				"You better not pout!",
+				"Every smile makes it all worthwhile!",
+				"Don't be a jerk!",
+				"Sweet Silver Bells!",
+				"falalalalalalalala",
+				"You're here where you should be!",
+				"Oh, what the heck, kickline!",
+				"Happy birthday!",
+				"Thumpidee-Thump-Thump!",
+				"Ding-dong-ding-dong that is there song!",
+				"I want a violent, deadly animal for Christmas!",
+				"All is calm, all is right!",
+				"The jingle-hop has begun!",
+				"Shopping, Decorating, and Plenty of Snow!",
+				"The button has been pressed!",
+				"Make my wish come true!"
+			]
+		}
 	]
 }

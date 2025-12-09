@@ -27,9 +27,10 @@ if (save_data) {
 } else {
 	console.log(`localStorage data not found! Loading...`);
 	dataobj = {
-		version: 5,
+		version: 7,
 		controls: {
 			extra_controls: false,
+			less_controls: false,
 			layout: 0,
 			controls_separate: true,
 			controls_size: 1,
@@ -54,6 +55,7 @@ if (save_data) {
 			startup_volume: 100,
 			startup_radio: "PLGgeOJev8QMT_4I6NP_BmgSUpQkiTddNf",
 			startup_radio_2k: "fungiradio",
+			event: true,
 			saveprogress_enabled: false,
 			saveprogress_index: 0
 		},
@@ -247,6 +249,51 @@ function load() {
 				startup_volume: dataobj.startup.startup_volume,
 				startup_radio: dataobj.startup.startup_radio,
 				startup_radio_2k: dataobj.startup.startup_radio_2k,
+				saveprogress_enabled: dataobj.startup.saveprogress_enabled,
+				saveprogress_index: dataobj.startup.saveprogress_index
+			},
+			extra: {
+				bumpers_enabled: dataobj.extra.bumpers_enabled
+			}
+		}
+		
+		dataobj = new_dataobj;
+	}
+	
+	if (dataobj.version == 6) { // Update from version 6 to 7
+		if (dataobj.devlogs) {
+			console.log(`Updating from version 6 to 7`);
+		}
+		let new_dataobj = {
+			version: 7,
+			controls: {
+				extra_controls: dataobj.controls,
+				less_controls: false,
+				layout: dataobj.controls.layout,
+				controls_separate: dataobj.controls.separate,
+				controls_size: dataobj.controls.controls_size,
+				consoles_visible: dataobj.controls.controls_visible,
+				hyperlink_pause: dataobj.controls.hyperlink_pause
+			},
+			dev: {
+				devlogs: dataobj.dev.devlogs,
+				iframe: dataobj.dev.iframe
+			},
+			radiolist: {
+				disabled_radios: dataobj.radiolist.disabled_radios,
+				disabled_radios_2k: dataobj.radiolist.disabled_radios_2k,
+				secrets_found: dataobj.radiolist.secrets_found,
+				secrets_found_2k: dataobj.radiolist.secrets_found_2k,
+				image_rendering: dataobj.radiolist.image_rendering,
+				speed: dataobj.radiolist.speed,
+				display_names: dataobj.radiolist.display_names
+			},
+			startup: {
+				startup_pause: dataobj.startup.startup_pause,
+				startup_volume: dataobj.startup.startup_volume,
+				startup_radio: dataobj.startup.startup_radio,
+				startup_radio_2k: dataobj.startup.startup_radio_2k,
+				startup_event: true,
 				saveprogress_enabled: dataobj.startup.saveprogress_enabled,
 				saveprogress_index: dataobj.startup.saveprogress_index
 			},
