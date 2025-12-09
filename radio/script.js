@@ -260,7 +260,7 @@ function begin_loading() {
 		console.log(`console logs enabled!`);
 	}
 	
-	$.getJSON('/radio/radio2.json', function(data) {
+	$.getJSON('/radio/radio.json', function(data) {
 		//Code vomit
 		radio_data = data;
 		//console.log(radio_data.radiolist[1].length);
