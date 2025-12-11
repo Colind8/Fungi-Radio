@@ -16,7 +16,7 @@ There are currently two separate instances of Fungi Radio with major changes to 
 Fungi Radio is a static website. Simply download the source code and host a server. Note: YouTube severely limits what videos are played on non-public servers.
 
 ## Creating your own "radios" (Fungi Radio: Default)
-Creating your own radios is as simple as editing a JSON file. Specifically, you need to edit the `radio2.json` file in the `radio` folder.
+Creating your own radios is as simple as editing a JSON file. Specifically, you need to edit the `radio.json` file in the `radio` folder.
 
 How it works is simple, this json file contains an array of "radio objects" that each define specific things about the radio. Adding a radio is as simple as adding a new radio object to the array.
 
