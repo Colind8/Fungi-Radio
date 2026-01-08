@@ -665,6 +665,186 @@
 			"unlock_password": "NA",
 			"album": "https://i.imgur.com/BdrTi4K.png",
 			"bg": "https://i.imgur.com/MqO6pEC.png"
+		},
+		{
+			"id": "PLGgeOJev8QMTSfuODvWe2s-kz6cFO83Xr",
+			"name": "Vocaloid Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/2z5iwcd.png",
+			"bg": "https://cdn2.steamgriddb.com/hero/0d268c63f6edb66f7d5ce093467b1f10.png"
+		},
+		{
+			"id": "PLhINSHA2pR3Z0jSIBKAKU8gB6zzZZMhNx",
+			"name": "Nico's Nextbots Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/54e634f071ec5bc3571636aa671d7ca2.png",
+			"bg": "https://i.imgur.com/FYcK6CJ.png"
+		},
+		{
+			"id": "PLGPhEjFVrLYmReLL-hk12lh80xAF6VARU",
+			"name": "Phighting Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/08a9ac631163ec4a1e6e2c6b730c7830/32/256x256.png",
+			"bg": "https://i.imgur.com/RaLJZ5V.png"
+		},
+		{
+			"id": "PL4E9ABD7FF1106BD3",
+			"name": "Team Fortress 2 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/d35a34476be067a04fa756c8c0b7dfbd/32/256x256.png",
+			"bg": "https://cdn2.steamgriddb.com/hero/c6e9701b682ec8f4cc3f8923c1dbb1f8.png"
+		},
+		{
+			"id": "PLzy_jQyVR3zs5JYmL6AnGweOWTCvoUKVd",
+			"name": "Antonblast Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/e8985ee7dd0f062d4f3e2779c7505c8b/32/256x256.png",
+			"bg": "https://i.imgur.com/mumsc4X.png"
+		},
+		{
+			"id": "PLgNzRP_ya1Z54p6VJ8fhPZxXTCEcyBrmG",
+			"name": "Splatoon Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/331d52c912e4221b962fafaed868e6a4/32/192x192.png",
+			"bg": "https://i.imgur.com/LLQaFbt.jpeg"
+		},
+		{
+			"id": "PLESFnlO3kNnovxkcQnKyr-Dq-OOdLSTrl",
+			"name": "Splatoon 2 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/8c38890c0ec1120a65a3e67057936baf.png",
+			"bg": "https://i.imgur.com/NEHpWNI.jpeg"
+		},
+		{
+			"id": "PL3uHdXbR3Suke4iYdHtBCZ5ELOGa-N69B",
+			"name": "Splatoon 3 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/abd69bbc2c51e3be894a2b70d08ee4fc.png",
+			"bg": "https://i.imgur.com/znMTyrJ.png"
+		},
+		{
+			"id": "PLUPKuAVC8PO6o2ODFItr4hU8gaf3nojaC",
+			"name": "Rift of the Necrodancer Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/DjXSCcT.png",
+			"bg": "https://i.imgur.com/lUsG0hn.png"
+		},
+		{
+			"id": "PLmHVWGm5XHWdjmdGUfSx6_cGyhz52bvUK",
+			"name": "Cadence of Hyrule Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/5641634173a41f2a4edbd2f3d0ec141f.png",
+			"bg": "https://i.imgur.com/IpcF7ED.png"
+		},
+		{
+			"id": "PLX5XsydZYlBoyyRo4do6Ts4E-seyBqerf",
+			"name": "Friday Night Funkin' Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/07211688a0869d995947a8fb11b215d6/32/192x192.png",
+			"bg": "https://i.imgur.com/qDe5VWo.png"
+		},
+		{
+			"id": "PLJQHL1SwXgq0m1LuxDGHDEWnBDFdYc2Vk",
+			"name": "Metal: Hellsinger Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/f43f4d7659397398c499180c22c9855a.png",
+			"bg": "https://i.imgur.com/dvcuKcT.png"
+		},
+		{
+			"id": "PL53mjgVKFq7yu0LdAvpp42ZGLzRCkFKuz",
+			"name": "Hades Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/851300ee84c2b80ed40f51ed26d866fc/32/256x256.png",
+			"bg": "https://i.imgur.com/f49bHkg.jpeg"
+		},
+		{
+			"id": "PLszED7miyK0K30jhyJg4WSl97E0T4o8Iq",
+			"name": "Rhythm Doctor Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/YWmfDJg.png",
+			"bg": "https://i.imgur.com/vmn5gSO.jpeg"
+		},
+		{
+			"id": "PLLZUjlvnKF07N3fNdPn-90Ih8Uvzfs543",
+			"name": "DOOM 2016 Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/85d8ce590ad8981ca2c8286f79f59954.png",
+			"bg": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/379720/ss_d7ee83faf64036494e4a817b8be55b044fbe7c6c.jpg"
+		},
+		{
+			"id": "PLi0nhlNIBg2vk0NKcJ8eaHQbjLhs7Gm6p",
+			"name": "DOOM Eternal Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/9813b270ed0288e7c0388f0fd4ec68f5/32/512x512.png",
+			"bg": "https://shared.fastly.steamstatic.com/community_assets/images/items/782330/58ac146303c34c8f8b1d844a5cf6bf5c5d56f7e6.jpg"
+		},
+		{
+			"id": "PLVApZPn8vTXCGrUU95PBGPxj5xnfOg8p1",
+			"name": "Just Shapes & Beats Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/620102c4716145776c35404e9431be38/32/256x256.png",
+			"bg": "https://shared.fastly.steamstatic.com/community_assets/images/items/531510/e93a7c94661178b9a8dac4c385f06e0ecb212070.jpg"
+		},
+		{
+			"id": "PLBO2h-GzDvIazWs1jFf0QwzLjKqTW5w5a",
+			"name": "Terraria Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/dd953ec3b549c2902d19bbbe88fa295a/32/256x256.png",
+			"bg": "https://shared.fastly.steamstatic.com/community_assets/images/items/105600/0d184618c836603f7d729141e9b5856b1caae972.jpg"
+		},
+		{
+			"id": "PLUBRITPk2Ku2pu7FklNqAf8vmRicLPfPY",
+			"name": "Vib-Ribbon Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://i.imgur.com/JG8clkD.png",
+			"bg": "https://i.imgur.com/ATRKmDU.png"
+		},
+		{
+			"id": "PLiWpH2_ZPEO29Wg2nZfQmf74dJK9xaXwT",
+			"name": "Parappa the Rapper Radio",
+			"section": "Soundtracks",
+			"unlock_method": "secret",
+			"unlock_password": "gamer",
+			"album": "https://cdn2.steamgriddb.com/icon/28f36aa85fbadc0663c2df15a5af35db/32/128x128.png",
+			"bg": "https://i.imgur.com/cl2qBvh.png"
 		}
 	],
 	"misc": {
