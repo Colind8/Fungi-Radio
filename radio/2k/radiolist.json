@@ -55,6 +55,15 @@
 			"bg": "https://i.imgur.com/94LXxTO.png"
 		},
 		{
+			"file": "gary",
+			"name": "Gary Radio",
+			"section": "Members",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/dy69NUy.png",
+			"bg": "https://i.imgur.com/MYJGOln.jpeg"
+		},
+		{
 			"file": "ratte",
 			"name": "Ratte Radio",
 			"section": "Members",
@@ -71,6 +80,24 @@
 			"unlock_password": "NA",
 			"album": "https://i.imgur.com/ukA8eML.png",
 			"bg": "https://i.imgur.com/9A7aioM.png"
+		},
+		{
+			"file": "erm",
+			"name": "ERM Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/G6Ar3nj.png",
+			"bg": "https://i.imgur.com/dHKjN2r.png"
+		},
+		{
+			"file": "metal",
+			"name": "Metal Radio",
+			"section": "Genres",
+			"unlock_method": "default",
+			"unlock_password": "NA",
+			"album": "https://i.imgur.com/x4zXjja.png",
+			"bg": "https://i.imgur.com/DgLcDQj.png"
 		},
 		{
 			"file": "novelty",
