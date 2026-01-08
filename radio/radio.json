@@ -752,6 +752,34 @@
 				"The button has been pressed!",
 				"Make my wish come true!"
 			]
+		},
+		{
+			"name": "Halloween",
+			"start_date": "10/1",
+			"end_date": "10/31",
+			"radio_id": 73,
+			"color_bg": "#14001c",
+			"color_fg": "#ff7800",
+			"splash_text": [
+				"BOO!",
+				"Trick-or-Treat!",
+				"Rocker beware, you're in for a scare!",
+				"Submitted for the approval of The Place, I call this song...",
+				"Like Zoinks!",
+				"This is Halloween!",
+				"IT IS THE SPOOKY MONTH!!!",
+				"The Candy Man can... and will!",
+				"Jeepers!",
+				"Jinkies!",
+				"Ruh-roh!",
+				"Happy Halloween!",
+				"Muhuhahahaha!!!",
+				"Ghostly haunting I turn loose!",
+				"Dear all trick-or-treaters...",
+				"oooOOooOOoOooooOo spooky",
+				"Seal your doom tonight!",
+				"Do you like scary songs?"
+			]
 		}
 	]
 }
