@@ -916,7 +916,7 @@
 			"name": "Christmas",
 			"start_date": "12/1",
 			"end_date": "12/31",
-			"radio_id": 33,
+			"radio_id": 38,
 			"color_bg": "#023e00",
 			"color_fg": "#ff2b2b",
 			"splash_text": [
@@ -955,7 +955,7 @@
 			"name": "Halloween",
 			"start_date": "10/1",
 			"end_date": "10/31",
-			"radio_id": 73,
+			"radio_id": 92,
 			"color_bg": "#14001c",
 			"color_fg": "#ff7800",
 			"splash_text": [
@@ -976,7 +976,16 @@
 				"Dear all trick-or-treaters...",
 				"oooOOooOOoOooooOo spooky",
 				"Seal your doom tonight!",
-				"Do you like scary songs?"
+				"Do you like scary songs?",
+				"Freaky Deaky!",
+				"One good scare ought to do you some good!",
+				"We got bats!",
+				"Boo! Boo I say!",
+				"IT'S ALIVE!",
+				"Reality's an illusion, the universe is a hologram, buy gold, bye!",
+				"Fungi Radio is not responsible for bites, decapitations, or fleas!",
+				"It's been so long!",
+				"Join us, be our friend!"
 			]
 		}
 	]
